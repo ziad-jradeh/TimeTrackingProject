@@ -59,7 +59,7 @@ border-radius:60px;
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>24</pointsize>
+       <pointsize>16</pointsize>
        <underline>false</underline>
       </font>
      </property>
@@ -433,7 +433,7 @@ color:red;</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>415</x>
+      <x>420</x>
       <y>10</y>
       <width>371</width>
       <height>281</height>
@@ -457,7 +457,7 @@ border-radius:60px;</string>
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>24</pointsize>
+       <pointsize>16</pointsize>
        <underline>false</underline>
       </font>
      </property>
@@ -470,6 +470,9 @@ border-radius:60px;</string>
      <property name="text">
       <string>Start Time Tracking</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QWidget" name="addProjectWidget" native="true">
      <property name="enabled">
@@ -480,7 +483,7 @@ border-radius:60px;</string>
        <x>20</x>
        <y>40</y>
        <width>161</width>
-       <height>101</height>
+       <height>111</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -491,7 +494,7 @@ border-radius:30px;
      <widget class="QLabel" name="addProjectLabel">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>40</x>
         <y>10</y>
         <width>71</width>
         <height>18</height>
@@ -539,9 +542,9 @@ border-radius:10px;
      <widget class="QPushButton" name="addProjectButton">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>70</y>
-        <width>71</width>
+        <x>20</x>
+        <y>80</y>
+        <width>121</width>
         <height>20</height>
        </rect>
       </property>
@@ -557,14 +560,14 @@ border-radius:10px;
 color:rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Add New</string>
+       <string>Add New Project</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="errorTextProjectLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>50</y>
+        <y>60</y>
         <width>141</width>
         <height>20</height>
        </rect>
@@ -585,7 +588,7 @@ color:black;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>150</y>
+       <y>160</y>
        <width>331</width>
        <height>111</height>
       </rect>
@@ -739,7 +742,7 @@ color:rgb(255, 255, 255);</string>
        <x>190</x>
        <y>40</y>
        <width>161</width>
-       <height>101</height>
+       <height>111</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -747,41 +750,11 @@ color:rgb(255, 255, 255);</string>
 border-radius:30px;
 </string>
      </property>
-     <widget class="QLabel" name="addSubjectLabel">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>10</y>
-        <width>71</width>
-        <height>18</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Chalkboard</family>
-        <pointsize>16</pointsize>
-        <bold>false</bold>
-        <underline>false</underline>
-       </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);</string>
-      </property>
-      <property name="text">
-       <string>Subject</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="addSubjectInput">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>30</y>
+        <y>33</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -795,12 +768,40 @@ border-radius:10px;
        <string/>
       </property>
      </widget>
+     <widget class="QComboBox" name="addSubjectOnProjectCombo">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>8</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <item>
+       <property name="text">
+        <string>project01</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>project02</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>project03</string>
+       </property>
+      </item>
+     </widget>
      <widget class="QPushButton" name="addSubjectButton">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>70</y>
-        <width>71</width>
+        <x>20</x>
+        <y>80</y>
+        <width>121</width>
         <height>20</height>
        </rect>
       </property>
@@ -816,14 +817,14 @@ border-radius:10px;
 color:rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Add New</string>
+       <string>Add New Subject</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="errorTextSubjectLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>50</y>
+        <y>60</y>
         <width>141</width>
         <height>20</height>
        </rect>
@@ -1112,7 +1113,7 @@ color:rgb(0,0,0);</string>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>16</pointsize>
+        <pointsize>14</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -1332,7 +1333,7 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>16</pointsize>
+        <pointsize>14</pointsize>
         <underline>false</underline>
        </font>
       </property>
@@ -1391,7 +1392,7 @@ border-radius:20px;
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>15</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
