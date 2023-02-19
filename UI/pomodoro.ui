@@ -41,7 +41,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>106</pointsize>
+      <pointsize>80</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -84,7 +84,7 @@ border-radius:30px;
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>16</pointsize>
+       <pointsize>12</pointsize>
        <bold>false</bold>
        <underline>false</underline>
       </font>
@@ -147,16 +147,16 @@ color:rgb(255, 255, 255);</string>
     <widget class="QLabel" name="yourTasksText">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>10</x>
        <y>60</y>
-       <width>71</width>
-       <height>18</height>
+       <width>81</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>14</pointsize>
+       <pointsize>12</pointsize>
        <bold>false</bold>
        <underline>false</underline>
       </font>
@@ -197,7 +197,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>30</pointsize>
+      <pointsize>20</pointsize>
       <underline>false</underline>
      </font>
     </property>
@@ -206,6 +206,9 @@ color:rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Pomodoro Session</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="numberOfSession">
@@ -220,7 +223,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>50</pointsize>
+      <pointsize>40</pointsize>
       <underline>false</underline>
      </font>
     </property>
@@ -246,7 +249,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>30</pointsize>
+      <pointsize>20</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -270,7 +273,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>20</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -311,7 +314,7 @@ border-radius:30px;
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>16</pointsize>
+       <pointsize>14</pointsize>
        <bold>false</bold>
        <underline>false</underline>
       </font>
@@ -341,7 +344,7 @@ border-radius:30px;
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>12</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -379,7 +382,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>15</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">

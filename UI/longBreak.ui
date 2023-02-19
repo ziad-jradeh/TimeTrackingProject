@@ -41,7 +41,7 @@ color:rgb(255,255,255);; </string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>106</pointsize>
+      <pointsize>80</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -67,7 +67,7 @@ border-radius:30px;</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>30</pointsize>
+      <pointsize>22</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -91,7 +91,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>20</pointsize>
+      <pointsize>16</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -115,7 +115,7 @@ color:rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Chalkboard</family>
-      <pointsize>15</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">

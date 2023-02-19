@@ -105,7 +105,7 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -202,7 +202,7 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -299,7 +299,7 @@ border-radius:30px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -396,7 +396,7 @@ border-radius:10px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -416,6 +416,11 @@ color:rgb(255, 255, 255);</string>
         <width>271</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
@@ -503,7 +508,7 @@ border-radius:30px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>16</pointsize>
+        <pointsize>14</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -551,7 +556,7 @@ border-radius:10px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -571,6 +576,11 @@ color:rgb(255, 255, 255);</string>
         <width>141</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
@@ -683,16 +693,16 @@ border-radius:20px;
      <widget class="QPushButton" name="startPomodoroButton">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>110</x>
         <y>80</y>
-        <width>171</width>
+        <width>131</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>20</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -808,7 +818,7 @@ border-radius:10px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -828,6 +838,11 @@ color:rgb(255, 255, 255);</string>
         <width>141</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
@@ -925,14 +940,14 @@ border-radius:40px;
        <rect>
         <x>10</x>
         <y>60</y>
-        <width>51</width>
+        <width>71</width>
         <height>18</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -952,14 +967,14 @@ border-radius:40px;
        <rect>
         <x>10</x>
         <y>110</y>
-        <width>51</width>
+        <width>61</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <underline>false</underline>
        </font>
       </property>
@@ -978,14 +993,14 @@ border-radius:40px;
        <rect>
         <x>10</x>
         <y>160</y>
-        <width>41</width>
+        <width>51</width>
         <height>18</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <underline>false</underline>
        </font>
       </property>
@@ -1082,7 +1097,7 @@ border-radius:40px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>17</pointsize>
+        <pointsize>12</pointsize>
         <underline>false</underline>
        </font>
       </property>
@@ -1113,7 +1128,7 @@ color:rgb(0,0,0);</string>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -1333,7 +1348,7 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <underline>false</underline>
        </font>
       </property>
@@ -1392,7 +1407,7 @@ border-radius:20px;
      <property name="font">
       <font>
        <family>Chalkboard</family>
-       <pointsize>14</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
