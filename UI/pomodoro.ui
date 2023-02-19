@@ -25,6 +25,11 @@
      <height>600</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(203, 34, 79);
 color:rgb(255, 255, 255);</string>
@@ -125,7 +130,7 @@ border-radius:10px;
       <rect>
        <x>360</x>
        <y>30</y>
-       <width>71</width>
+       <width>81</width>
        <height>20</height>
       </rect>
      </property>

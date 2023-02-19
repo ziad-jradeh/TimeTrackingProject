@@ -1216,55 +1216,109 @@ text-align: center;</string>
        <property name="text">
         <string>1</string>
        </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </property>
       </row>
       <row>
        <property name="text">
         <string>2</string>
        </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>6</string>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
        </property>
       </row>
       <column>
        <property name="text">
         <string>Date</string>
        </property>
+       <property name="font">
+        <font>
+         <family>Chalkboard</family>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>Starting Time</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Chalkboard</family>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
        </property>
       </column>
       <column>
        <property name="text">
         <string>End Time</string>
        </property>
+       <property name="font">
+        <font>
+         <family>Chalkboard</family>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>Success (Tasks)</string>
        </property>
+       <property name="font">
+        <font>
+         <family>Chalkboard</family>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>Failure (Tasks)</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Chalkboard</family>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
        </property>
       </column>
       <item row="0" column="0">
