@@ -316,14 +316,14 @@ color:rgb(255, 255, 255);</string>
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>131</width>
+        <width>251</width>
         <height>18</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>16</pointsize>
+        <pointsize>13</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -508,7 +508,7 @@ border-radius:30px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>13</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
