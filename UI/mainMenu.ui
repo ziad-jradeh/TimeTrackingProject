@@ -129,7 +129,7 @@ color:rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -226,7 +226,7 @@ color:rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -620,7 +620,7 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -675,7 +675,7 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -947,7 +947,7 @@ border-radius:40px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
         <bold>false</bold>
         <underline>false</underline>
        </font>
@@ -974,7 +974,7 @@ border-radius:40px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
         <underline>false</underline>
        </font>
       </property>
@@ -1000,7 +1000,7 @@ border-radius:40px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
         <underline>false</underline>
        </font>
       </property>
