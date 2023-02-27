@@ -34,9 +34,6 @@
             },
             {
                 "email": "bro@mail.com"
-            },
-            {
-                "email": "ddd"
             }
         ]
     },
@@ -55,11 +52,5 @@
                 "email": "friend2@mail.com"
             }
         ]
-    },
-    {
-        "name": "TestUser",
-        "email": "test@mail.com",
-        "projects": [],
-        "recipients": []
     }
 ]
