@@ -103,7 +103,37 @@ class MainMenuUI(QDialog):
     def __init__(self):
         super(MainMenuUI,self).__init__()
         loadUi("./UI/mainMenu.ui",self)
-
+        # Set the addRecipientButton and deleteRecipientButton click event handlers.
+        self.addRecipientButton.clicked.connect(self.add_recipient)
+        self.deleteRecipientButton.clicked.connect(self.delete_recipient)
+        
+        # Load the recipients emails to the deleteRecipientCombo after clearing it.
+        self.deleteRecipientCombo.clear()
+        self.deleteRecipientCombo.addItems([recipient.email for recipient in current_user.recipients])
+        
+    def add_recipient(self):
+        '''A handler function for the add recipient button click event.'''
+        email = self.addRecipientInput.text()   # Get the recipient email the user entered
+        # Check if it is already in the recipient list.
+        if email in [i.email for i in current_user.recipients]:
+            self.errorTextRecipientsEmailLabel.setText(f"{email} is already in the recipients list.")
+        else:
+            # Create a new Recipient from the email the user has entered and add it to recipients list and the recipients menu.
+            recipient = Recipient(email)
+            current_user.recipients.append(recipient)
+            self.deleteRecipientCombo.addItem(recipient.email)
+            self.deleteRecipientCombo.setCurrentIndex(len(current_user.recipients)-1)   # Select the new recipient in the menu (last one)
+            self.errorTextRecipientsEmailLabel.setText(f"{email} is added to the recipients list.")
+            save_data()
+        
+    def delete_recipient(self):
+        '''A handler function for the delete recipient button click event.'''
+        selected_index = self.deleteRecipientCombo.currentIndex()   # get the index of the selected recipient
+        del current_user.recipients[selected_index]         # Delete the recipient from the recipients list
+        self.deleteRecipientCombo.removeItem(selected_index)    # remove it from the recipients menu
+        save_data()
+        
+        
 class PomodoroUI(QDialog):
     def __init__(self):
         super(PomodoroUI,self).__init__()
