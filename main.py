@@ -12,9 +12,26 @@ class LoginUI(QDialog):
     def __init__(self):
         super(LoginUI,self).__init__()
         loadUi("./UI/login.ui",self)
-
+        
+        self.users = ["dummy@gmail.com", "dummy@gmail.com"] 
+        
         # This is example of changing screen
-        self.loginButton.clicked.connect(self.go_main_menu)
+        self.loginButton.clicked.connect(self.login)
+        self.signUpButton.clicked.connect(self.signUp)
+        
+        
+    def login(self):
+        email = self.emailInputLogin.text()
+        
+        if email in self.users:
+            self.go_main_menu()
+        else:
+            self.errorTextLogin.setText("Go sign up")
+    
+    def signUp(self):
+        pass
+        
+    
 
     def go_main_menu(self):
         main_menu = MainMenuUI()
