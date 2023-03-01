@@ -1,0 +1,80 @@
+[
+    {
+        "name": "John",
+        "email": "john@gmail.com",
+        "projects": [
+            {
+                "name": "math",
+                "subjects": [
+                    {
+                        "name": "equations",
+                        "PomodoroSessions": []
+                    },
+                    {
+                        "name": "algebra",
+                        "PomodoroSessions": []
+                    }
+                ]
+            },
+            {
+                "name": "Python",
+                "subjects": []
+            },
+            {
+                "name": "Chemestry",
+                "subjects": []
+            }
+        ],
+        "recipients": [
+            {
+                "email": "mom@mail.com"
+            },
+            {
+                "email": "dad@mail.com"
+            },
+            {
+                "email": "bro@mail.com"
+            }
+        ]
+    },
+    {
+        "name": "Ziad",
+        "email": "ziad@gmail.com",
+        "projects": [],
+        "recipients": [
+            {
+                "email": "mother@mail.com"
+            },
+            {
+                "email": "friend1@mail.com"
+            },
+            {
+                "email": "friend2@mail.com"
+            }
+        ]
+    },
+    {
+        "name": "asdsad",
+        "email": "asdsad",
+        "projects": [],
+        "recipients": []
+    },
+    {
+        "name": "asdsadsd",
+        "email": "asdsadsd",
+        "projects": [],
+        "recipients": []
+    },
+    {
+        "name": "sad",
+        "email": "sads",
+        "projects": [],
+        "recipients": []
+    },
+    {
+        "username": "aaasad",
+        "email": "sadssad",
+        "recipients": [],
+        "projects": []
+    }
+]

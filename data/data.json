@@ -1,0 +1,201 @@
+[
+    {
+        "name": "John",
+        "email": "john@gmail.com",
+        "projects": [
+            {
+                "name": "math",
+                "subjects": [
+                    {
+                        "name": "equations",
+                        "PomodoroSessions": [
+                            {
+                                "number": 1,
+                                "starting_time": "2023-03-01 16:02:06.250685",
+                                "tasks": []
+                            },
+                            {
+                                "number": 2,
+                                "starting_time": "2023-03-01 16:02:17.436781",
+                                "tasks": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Chemestry",
+                "subjects": [
+                    {
+                        "name": "aa",
+                        "PomodoroSessions": [
+                            {
+                                "number": 1,
+                                "starting_time": "2023-03-01 15:47:10.502799",
+                                "tasks": []
+                            },
+                            {
+                                "number": 2,
+                                "starting_time": "2023-03-01 15:47:18.583322",
+                                "tasks": []
+                            },
+                            {
+                                "number": 3,
+                                "starting_time": "2023-03-01 16:41:42.167939",
+                                "tasks": []
+                            },
+                            {
+                                "number": 4,
+                                "starting_time": "2023-03-01 17:52:57.211769",
+                                "tasks": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Python",
+                "subjects": [
+                    {
+                        "name": "oop",
+                        "PomodoroSessions": [
+                            {
+                                "number": 1,
+                                "starting_time": "2023-03-01 14:52:27.989613",
+                                "tasks": []
+                            },
+                            {
+                                "number": 2,
+                                "starting_time": "2023-03-01 15:09:16.818675",
+                                "tasks": []
+                            },
+                            {
+                                "number": 3,
+                                "starting_time": "2023-03-01 15:09:22.871977",
+                                "tasks": []
+                            },
+                            {
+                                "number": 4,
+                                "starting_time": "2023-03-01 15:19:06.042548",
+                                "tasks": []
+                            },
+                            {
+                                "number": 5,
+                                "starting_time": "2023-03-01 15:24:20.055118",
+                                "tasks": []
+                            },
+                            {
+                                "number": 6,
+                                "starting_time": "2023-03-01 15:24:27.271384",
+                                "tasks": []
+                            },
+                            {
+                                "number": 7,
+                                "starting_time": "2023-03-01 15:32:03.396009",
+                                "tasks": []
+                            },
+                            {
+                                "number": 8,
+                                "starting_time": "2023-03-01 15:38:39.670229",
+                                "tasks": []
+                            },
+                            {
+                                "number": 9,
+                                "starting_time": "2023-03-01 15:41:58.535163",
+                                "tasks": []
+                            },
+                            {
+                                "number": 10,
+                                "starting_time": "2023-03-01 15:46:59.888176",
+                                "tasks": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "func",
+                        "PomodoroSessions": [
+                            {
+                                "number": 1,
+                                "starting_time": "2023-03-01 15:48:14.659608",
+                                "tasks": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "C++",
+                "subjects": [
+                    {
+                        "name": "oop",
+                        "PomodoroSessions": [
+                            {
+                                "number": 1,
+                                "starting_time": "2023-03-01 20:51:45.681993",
+                                "tasks": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "recipients": [
+            {
+                "email": "mom@mail.com"
+            },
+            {
+                "email": "dad@mail.com"
+            }
+        ]
+    },
+    {
+        "name": "Ziad",
+        "email": "ziad@gmail.com",
+        "projects": [
+            {
+            "name": "C++",
+            "subjects": [
+                {
+                    "name": "oop",
+                    "PomodoroSessions": [
+                        {
+                            "number": 1,
+                            "starting_time": "2023-03-01 20:51:45.681993",
+                            "tasks": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+        "recipients": [
+            {
+                "email": "mother@mail.com"
+            },
+            {
+                "email": "friend1@mail.com"
+            },
+            {
+                "email": "friend2@mail.com"
+            }
+        ]
+    },
+    {
+        "name": "asdsad",
+        "email": "asdsad",
+        "projects": [],
+        "recipients": []
+    },
+    {
+        "name": "asdsadsd",
+        "email": "asdsadsd",
+        "projects": [],
+        "recipients": []
+    },
+    {
+        "name": "sad",
+        "email": "sads",
+        "projects": [],
+        "recipients": []
+    }
+]
