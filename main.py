@@ -1,7 +1,7 @@
 from time import time
 from PyQt5 import QtWidgets
 import PyQt5
-from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt5.QtWidgets import QDialog, QApplication, QTableWidgetItem
 from PyQt5.uic import loadUi
 import sys
 
@@ -118,6 +118,7 @@ class MainMenuUI(QDialog):
         self.addSubjectButton.clicked.connect(self.add_subject)
         self.subjectDeleteButton.clicked.connect(self.delete_subject)
         self.startPomodoroButton.clicked.connect(self.go_pomodro)    
+        self.showSummaryButton.clicked.connect(self.show_summary)
 
         # Load the recipients emails to the deleteRecipientCombo after clearing it.
         self.deleteRecipientCombo.clear()
@@ -156,6 +157,7 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.clear()
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
         self.showSummaryProjectCombo.activated.connect(self.check_index3)
+        
         
 
     def check_index(self, index):
@@ -258,6 +260,28 @@ class MainMenuUI(QDialog):
         del current_user.projects[selected_index2].subjects[selected_index]
         self.subjectDeleteCombo.removeItem(selected_index)    # remove it from the recipients menu
         save_data()
+    
+    def show_summary(self):
+        project_index = self.showSummaryProjectCombo.currentIndex()
+        subject_index = self.showSummarySubjectCombo.currentIndex()
+        
+        self.summaryTableValuesWidget.setHorizontalHeaderLabels(['Date', 'Starting Time', 'End Time', 'Success (Tasks)', 'Failure (Tasks)'])  # set the column headers
+        data = []
+        self.summaryTableValuesWidget.setRowCount(len(data))  # set the number of rows in the table
+        for row in range(len(data)):
+            for col in range(3):
+                item = QTableWidgetItem(str(data[row][col]))  # create a QTableWidgetItem for each cell
+                self.summaryTableValuesWidget.setItem(row, col, item)  # add the item to the table
+    
+
+
+    # pomodro = [{"date": "23-04-2023", "start_time": "12:00", "end_time": "13:00","tasks":["task1", "task2", "task3"]}]
+    # self.summaryTableValuesWidget.setColumnCount(len(pomodro.keys()))
+        # for key in pomodro:
+            
+        # self.setHorizontalHeaderLabels(a)
+        
+        # self.summaryTableValuesWidget.setRowCount(5)
 
    
 
@@ -298,6 +322,8 @@ class PomodoroUI(QDialog):
         self.doneButton.clicked.connect(self.end_session)
         self.tasksCombo_2.currentIndexChanged.connect(self.update_task_status_button)
         self.goToMainMenuButton.clicked.connect(self.goToMainMenu)
+        
+
         
         self.setup_session()
     
@@ -420,6 +446,9 @@ class PomodoroUI(QDialog):
             longBreakUI = LongBreakUI()
             widget.addWidget(longBreakUI)
             widget.setCurrentIndex(widget.count()-1)
+    
+    
+
         
     def goToMainMenu(self):
         widget.setCurrentIndex(1)
