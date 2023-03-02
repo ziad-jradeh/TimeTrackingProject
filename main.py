@@ -153,8 +153,10 @@ class MainMenuUI(QDialog):
         self.errorTextProjectLabel.clear()
         self.errorTextSubjectLabel.clear()
         self.showSummarySubjectCombo.clear()
+        self.showSummarySubjectCombo.addItem("All")
         
         self.showSummaryProjectCombo.clear()
+        self.showSummaryProjectCombo.addItem("All")
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
         self.showSummaryProjectCombo.activated.connect(self.check_index3)
         
@@ -170,7 +172,7 @@ class MainMenuUI(QDialog):
         
     def check_index3(self, index):
         self.showSummarySubjectCombo.clear()
-        self.showSummarySubjectCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
+        self.showSummarySubjectCombo.addItems([subject.name for subject in current_user.projects[index-1].subjects])
         
         
 
@@ -265,11 +267,21 @@ class MainMenuUI(QDialog):
         project_index = self.showSummaryProjectCombo.currentIndex()
         subject_index = self.showSummarySubjectCombo.currentIndex()
         
-        self.summaryTableValuesWidget.setHorizontalHeaderLabels(['Date', 'Starting Time', 'End Time', 'Success (Tasks)', 'Failure (Tasks)'])  # set the column headers
-        data = []
+        if project_index == 0:
+            data = []
+            self.showSummarySubjectCombo.addItem("All")
+            for project in current_user.projects:
+                for subject in project.subjects:
+                    for pomodoro in subject.pomodoros:
+                        for pomodoro_session in pomodoro.pomodoro_sessions:
+                            data.append(pomodoro_session.get_summary())
+                            
+        else:    
+            data = [session.get_summary() for session in current_user.projects[project_index-1].subjects[subject_index].pomodoros[0].pomodoro_sessions]
+            
         self.summaryTableValuesWidget.setRowCount(len(data))  # set the number of rows in the table
         for row in range(len(data)):
-            for col in range(3):
+            for col in range(5):
                 item = QTableWidgetItem(str(data[row][col]))  # create a QTableWidgetItem for each cell
                 self.summaryTableValuesWidget.setItem(row, col, item)  # add the item to the table
     
@@ -287,7 +299,7 @@ class MainMenuUI(QDialog):
 
 
     def go_pomodro(self):
-        
+
         index1 = self.selectProjectCombo.currentIndex()
         index2 = self.selectSubjectCombo.currentIndex()
         global current_subject, current_project
