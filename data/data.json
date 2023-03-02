@@ -23,6 +23,15 @@
             {
                 "name": "Chemestry",
                 "subjects": []
+            },
+            {
+                "name": "asdsad",
+                "subjects": [
+                    {
+                        "name": "sadsad",
+                        "PomodoroSessions": []
+                    }
+                ]
             }
         ],
         "recipients": [

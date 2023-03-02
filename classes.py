@@ -21,12 +21,13 @@ class Project():
     
     This class holds the data for each Project.'''
     
-    def __init__(self, name, **attr):
+    def __init__(self, name):
         self.name = name
         self.subjects = []
+    
+    
         
-        # Load the attributes from a dictionary that contains all the attributes
-        self.__dict__.update(attr)
+        
     
     
 
@@ -40,8 +41,10 @@ class Subject():
         self.PomodoroSessions = []
         self.__dict__.update(attr)
     
+   
+    
 
-class PomodoroSession():
+class PomodoroSessions():
     '''PomodoroSession class (name: String, **attributes: Dictionary)
     
     This class holds the data for each PomodoroSession.'''
@@ -50,11 +53,13 @@ class PomodoroSession():
         self.number = number
         
         # Temporary values, to be fixed later
-        self.starting_time = datetime.datetime.now()
-        self.end_time = datetime.datetime.now()
-        self.date = datetime.datetime.now()
+        self.starting_time = str(datetime.datetime.now())
+        # self.end_time = datetime.datetime.now()
+        # self.date = datetime.datetime.now()
         
         self.tasks = []
+    
+    
 
 
 class Task():
@@ -75,25 +80,18 @@ class Recipient():
 class JsonEncoder(json.JSONEncoder):
     '''This class implements a JSON encoder to encode the given object to json.'''
     def default(self, obj):
-        return obj.__dict__  
+        return obj.__dict__ 
 
-
-def dict_to_user(user_dict):
-    '''A function to convert a dictionary to a User object. Returns a User object.'''
-    
-    # Create a User object from the user dictionary that contains all its attributes and data.
-    user = User(**user_dict)
-    
-    # Create the Projects and Subjects inside the User object from their dictionaries.
-    for i, project_dict in enumerate(user.projects):
-        user.projects[i] = Project(**project_dict)
-        for j, subject_dict in enumerate(user.projects[i].subjects):
-            user.projects[i].subjects[j] = Subject(**subject_dict)
-    
-    # Create the Recipients inside the User object from their dictionaries.
-    for i, recipient_dict in enumerate(user.recipients):
-        user.recipients[i] = Recipient(**recipient_dict)
         
-    # Return the full User object with all it's data.
-    return user
+        
 
+class Struct(object):
+    def __init__(self, data):
+        for name, value in data.items():
+            setattr(self, name, self._wrap(value))
+
+    def _wrap(self, value):
+        if isinstance(value, (tuple, list, set, frozenset)): 
+            return type(value)([self._wrap(v) for v in value])
+        else:
+            return Struct(value) if isinstance(value, dict) else value
