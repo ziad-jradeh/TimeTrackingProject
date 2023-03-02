@@ -192,7 +192,7 @@ class MainMenuUI(QDialog):
         else:
             # Create a new Recipient from the email the user has entered and add it to recipients list and the recipients menu.
             recipient = Recipient(email)
-            current_user.recipients.append(recipient)
+            current_user.recipients.append(recipient) # recipient is added to the current_user.recipients lis
             self.deleteRecipientCombo.addItem(recipient.email)
             self.deleteRecipientCombo.setCurrentIndex(len(current_user.recipients)-1)   # Select the new recipient in the menu (last one)
             self.errorTextRecipientsEmailLabel.setText(f"{email} is added to the recipients list.")
