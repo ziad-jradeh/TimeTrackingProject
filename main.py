@@ -174,6 +174,7 @@ class MainMenuUI(QDialog):
     def check_index3(self, index):
         self.showSummarySubjectCombo.clear()
         self.showSummarySubjectCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
+        
 
     
         
