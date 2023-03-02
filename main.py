@@ -20,6 +20,7 @@ backup_file = "data/data.backup.json" # The path to the backup data file.
 # A global list that will contain all the users objects
 users_list = []
 
+
 class LoginUI(QDialog):
     def __init__(self):
         super(LoginUI,self).__init__()
@@ -38,6 +39,7 @@ class LoginUI(QDialog):
                 json_data = json.load(f)
                 
         global users_list
+        
         
         # Fill the users list with all the users objects from the json file after converting them into User objects.
         # same as:
@@ -108,6 +110,8 @@ class LoginUI(QDialog):
 
 class MainMenuUI(QDialog):
     counter = 0
+    current_project = ""
+    current_subject = ""
     def __init__(self):
         super(MainMenuUI,self).__init__()
         loadUi("./UI/mainMenu.ui",self)
@@ -118,8 +122,7 @@ class MainMenuUI(QDialog):
         self.projectDeleteButton.clicked.connect(self.delete_project)
         self.addSubjectButton.clicked.connect(self.add_subject)
         self.subjectDeleteButton.clicked.connect(self.delete_subject)
-        self.startPomodoroButton.clicked.connect(self.go_pomodro)
-        
+        self.startPomodoroButton.clicked.connect(self.go_pomodro)    
 
         # Load the recipients emails to the deleteRecipientCombo after clearing it.
         self.deleteRecipientCombo.clear()
@@ -155,12 +158,11 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.clear()
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
         self.showSummaryProjectCombo.activated.connect(self.check_index3)
+        
+        
 
-
         
-        
-        
-        
+    
     def check_index(self, index):
         self.selectSubjectCombo.clear()
         self.selectSubjectCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
@@ -201,8 +203,7 @@ class MainMenuUI(QDialog):
         self.deleteRecipientCombo.removeItem(selected_index)    # remove it from the recipients menu
         save_data()
     
-    def add_project(self, index):
-        
+    def add_project(self):
         project = self.addProjectInput.text()
         if project == "":
             self.errorTextProjectLabel.setText("This field cannot be empty.")
@@ -211,6 +212,8 @@ class MainMenuUI(QDialog):
             self.errorTextProjectLabel.setText(f"{project} is already in the recipients list.")
         else:
             project_name = Project(project)
+            MainMenuUI.current_project2 = project_name
+
             current_user.projects.append(project_name)
             self.projectDeleteCombo.addItem(project_name.name)
             self.projectDeleteCombo.setCurrentIndex(len(current_user.projects)-1)   # Select the new recipient in the menu (last one)
@@ -239,12 +242,13 @@ class MainMenuUI(QDialog):
         
         if subject == "":
             self.errorTextSubjectLabel.setText("This field cannot be empty.")
-            
+
         elif subject in [i.name for i in current_user.projects for i in i.subjects]:
             self.errorTextSubjectLabel.setText(f"{subject} is already in the project.")
             
         else:
             subject_name = Subject(subject)
+            MainMenuUI.current_subject2 = subject_name
             current_user.projects[selected_index_sbject].subjects.append(subject_name)
             self.errorTextSubjectLabel.setText(f"{subject} has been added.")
             save_data()
@@ -258,7 +262,8 @@ class MainMenuUI(QDialog):
         self.subjectDeleteCombo.removeItem(selected_index)    # remove it from the recipients menu
         save_data()
 
-    
+   
+
 
     def go_pomodro(self):
         Pomodoro_Session = PomodoroUI()
@@ -267,6 +272,12 @@ class MainMenuUI(QDialog):
         widget.setCurrentIndex(widget.currentIndex()+1)
         index1 = self.selectProjectCombo.currentIndex()
         index2 = self.selectSubjectCombo.currentIndex()
+        
+        a = self.selectProjectCombo.currentText()
+        b = self.selectSubjectCombo.currentText()
+        MainMenuUI.current_subject = a
+        MainMenuUI.current_project = b
+        
         if current_user.projects[index1].subjects[index2].PomodoroSessions:
             current_session = current_user.projects[index1].subjects[index2].PomodoroSessions[-1].number
             if  current_session >= MainMenuUI.counter:
@@ -274,7 +285,6 @@ class MainMenuUI(QDialog):
                 MainMenuUI.counter += current_session
                 pomo_session = PomodoroSessions(MainMenuUI.counter)
                 current_user.projects[index1].subjects[index2].PomodoroSessions.append(pomo_session)
-                print(MainMenuUI.counter)
                 # current_pomodro.append(pomo_session)
                 save_data()
         else:
@@ -284,6 +294,7 @@ class MainMenuUI(QDialog):
             print(MainMenuUI.counter)
             # current_pomodro.append(pomo_session)
             save_data()
+        # print(MainMenuUI.current_project,MainMenuUI.current_subject)
         
         
 class PomodoroUI(QDialog):
@@ -292,6 +303,30 @@ class PomodoroUI(QDialog):
         loadUi("./UI/pomodoro.ui",self)
         
         self.goToMainMenuButton.clicked.connect(self.go_main_menu)
+        self.addTask.clicked.connect(self.add_task)
+        
+
+
+    
+    def add_task(self):
+        '''A handler function for the add recipient button click event.'''
+        task = self.addTask.text()   # Get the recipient email the user entered
+        # Check if it is already in the recipient list.
+        print(MainMenuUI.current_subject, MainMenuUI.current_project)
+        # print(MainMenuUI.current_subject2, MainMenuUI.current_project2)
+        if task == "":
+            self.errorTextRecipientsEmailLabel.setText("This field cannot be empty.")
+            return
+        else:
+            # selected_index2 = self.projectDeleteCombo.currentIndex()
+            # selected_index = self.subjectDeleteCombo.currentIndex()
+            # Create a new Recipient from the email the user has entered and add it to recipients list and the recipients menu.
+            task_name = Task(task)
+            current_user.projects[0].subjects[0].PomodoroSessions[0].tasks.append(task_name)
+            self.tasksCombo.addItem(task_name.name)
+            self.tasksCombo.setCurrentIndex(len(task_name.name)-1)   # Select the new recipient in the menu (last one)
+            save_data()
+
     
     def go_main_menu(self):
         main_menu = MainMenuUI()

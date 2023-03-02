@@ -12,11 +12,37 @@
                             {
                                 "number": 1,
                                 "starting_time": "2023-03-01 16:02:06.250685",
-                                "tasks": []
+                                "tasks": [
+                                    {
+                                        "name": "Add Task",
+                                        "finished": false
+                                    },
+                                    {
+                                        "name": "Add Task",
+                                        "finished": false
+                                    },
+                                    {
+                                        "name": "Add Task",
+                                        "finished": false
+                                    },
+                                    {
+                                        "name": "Add Task",
+                                        "finished": false
+                                    },
+                                    {
+                                        "name": "Add Task",
+                                        "finished": false
+                                    }
+                                ]
                             },
                             {
                                 "number": 2,
                                 "starting_time": "2023-03-01 16:02:17.436781",
+                                "tasks": []
+                            },
+                            {
+                                "number": 3,
+                                "starting_time": "2023-03-02 15:28:26.697788",
                                 "tasks": []
                             }
                         ]
@@ -46,10 +72,14 @@
                             },
                             {
                                 "number": 4,
-                                "starting_time": "2023-03-01 17:52:57.211769",
+                                "starting_time": "2023-03-02 15:28:14.360620",
                                 "tasks": []
                             }
                         ]
+                    },
+                    {
+                        "name": "bb",
+                        "PomodoroSessions": []
                     }
                 ]
             },
@@ -118,6 +148,11 @@
                                 "number": 1,
                                 "starting_time": "2023-03-01 15:48:14.659608",
                                 "tasks": []
+                            },
+                            {
+                                "number": 2,
+                                "starting_time": "2023-03-02 02:02:11.002058",
+                                "tasks": []
                             }
                         ]
                     }
@@ -132,6 +167,11 @@
                             {
                                 "number": 1,
                                 "starting_time": "2023-03-01 20:51:45.681993",
+                                "tasks": []
+                            },
+                            {
+                                "number": 2,
+                                "starting_time": "2023-03-02 01:21:14.242043",
                                 "tasks": []
                             }
                         ]
@@ -153,21 +193,21 @@
         "email": "ziad@gmail.com",
         "projects": [
             {
-            "name": "C++",
-            "subjects": [
-                {
-                    "name": "oop",
-                    "PomodoroSessions": [
-                        {
-                            "number": 1,
-                            "starting_time": "2023-03-01 20:51:45.681993",
-                            "tasks": []
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
+                "name": "C++",
+                "subjects": [
+                    {
+                        "name": "oop",
+                        "PomodoroSessions": [
+                            {
+                                "number": 1,
+                                "starting_time": "2023-03-01 20:51:45.681993",
+                                "tasks": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
         "recipients": [
             {
                 "email": "mother@mail.com"
