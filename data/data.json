@@ -1,5 +1,5 @@
-[
-    {
+{
+    "john@gmail.com": {
         "name": "John",
         "email": "john@gmail.com",
         "projects": [
@@ -8,30 +8,113 @@
                 "subjects": [
                     {
                         "name": "equations",
-                        "PomodoroSessions": []
+                        "pomodoros": [
+                            {
+                                "UID": 1677778872,
+                                "pomodoro_sessions": []
+                            },
+                            {
+                                "UID": 1677779020,
+                                "pomodoro_sessions": []
+                            }
+                        ]
                     },
                     {
                         "name": "algebra",
-                        "PomodoroSessions": []
+                        "pomodoros": []
+                    },
+                    {
+                        "name": "test",
+                        "pomodoros": []
                     }
                 ]
             },
             {
                 "name": "Python",
-                "subjects": []
+                "subjects": [
+                    {
+                        "name": "oop",
+                        "pomodoros": [
+                            {
+                                "UID": 1677779119,
+                                "pomodoro_sessions": [
+                                    {
+                                        "UID": 1677779119,
+                                        "number": 0,
+                                        "starting_time": "02-03-2023 18:45:42",
+                                        "end_time": "02-03-2023 18:45:54",
+                                        "date": "02-03-2023 18:45:42",
+                                        "tasks": [
+                                            {
+                                                "name": "task1",
+                                                "finished": true
+                                            },
+                                            {
+                                                "name": "task2",
+                                                "finished": false
+                                            },
+                                            {
+                                                "name": "task3",
+                                                "finished": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677779155,
+                                        "number": 1,
+                                        "starting_time": "02-03-2023 18:46:24",
+                                        "end_time": "02-03-2023 18:46:25",
+                                        "date": "02-03-2023 18:46:24",
+                                        "tasks": [
+                                            {
+                                                "name": "task4",
+                                                "finished": true
+                                            },
+                                            {
+                                                "name": "task5",
+                                                "finished": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677779186,
+                                        "number": 2,
+                                        "starting_time": "02-03-2023 18:47:05",
+                                        "end_time": "02-03-2023 18:47:10",
+                                        "date": "02-03-2023 18:47:05",
+                                        "tasks": [
+                                            {
+                                                "name": "task6",
+                                                "finished": true
+                                            },
+                                            {
+                                                "name": "task7",
+                                                "finished": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677779231,
+                                        "number": 3,
+                                        "starting_time": "02-03-2023 18:47:24",
+                                        "end_time": "02-03-2023 18:47:25",
+                                        "date": "02-03-2023 18:47:24",
+                                        "tasks": [
+                                            {
+                                                "name": "task8",
+                                                "finished": false
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "name": "Chemestry",
                 "subjects": []
-            },
-            {
-                "name": "asdsad",
-                "subjects": [
-                    {
-                        "name": "sadsad",
-                        "PomodoroSessions": []
-                    }
-                ]
             }
         ],
         "recipients": [
@@ -46,7 +129,7 @@
             }
         ]
     },
-    {
+    "ziad@gmail.com": {
         "name": "Ziad",
         "email": "ziad@gmail.com",
         "projects": [],
@@ -62,10 +145,14 @@
             }
         ]
     },
-    {
-        "name": "TestUser",
+    "test@mail.com": {
+        "name": "test",
         "email": "test@mail.com",
         "projects": [],
-        "recipients": []
+        "recipients": [
+            {
+                "email": "aaaa"
+            }
+        ]
     }
-]
+}

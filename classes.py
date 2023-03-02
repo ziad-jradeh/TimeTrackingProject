@@ -1,5 +1,9 @@
-import datetime
 import json
+from PyQt5.QtCore import QDateTime
+
+date_time_format = "dd-MM-yyyy HH:mm:ss"
+time_format = "HH:mm"
+date_format = "dd-MM-yyyy"
 
 class User():
     '''User class (name: String, email: String, **attributes: Dictionary)
@@ -21,13 +25,12 @@ class Project():
     
     This class holds the data for each Project.'''
     
-    def __init__(self, name):
+    def __init__(self, name, **attr):
         self.name = name
         self.subjects = []
-    
-    
         
-        
+        # Load the attributes from a dictionary that contains all the attributes
+        self.__dict__.update(attr)
     
     
 
@@ -38,60 +41,144 @@ class Subject():
     
     def __init__(self, name, **attr):
         self.name = name
-        self.PomodoroSessions = []
+        self.pomodoros = []
+        
+        # Load the attributes from a dictionary that contains all the attributes
+        self.__dict__.update(attr)
+
+    
+class Pomodoro():
+    def __init__(self, **attr):
+        # Unique identifier based on the seconds since the epoch
+        self.UID = QDateTime.currentSecsSinceEpoch()
+        
+        self.pomodoro_sessions = []
+        
         self.__dict__.update(attr)
     
-   
     
-
-class PomodoroSessions():
+    
+    ### SIMPLIFY THIS STARTING TIME OF FIRST SESSION TO END TIME OF THE LAST SESSION
+    @property
+    def starting_time(self):
+        '''A property for the starting time of the Pomodoro.'''
+        if len(self.pomodoro_sessions) == 0:
+            return None
+        else:
+            datetime = QDateTime.fromString(self.pomodoro_sessions[0].starting_time, date_time_format)
+            time = datetime.time().toString(time_format)
+            return time
+    
+    @property
+    def end_time(self):
+        '''A property for the end time of the Pomodoro.'''
+        if len(self.pomodoro_sessions) == 0:
+            return None
+        else:
+            datetime = QDateTime.fromString(self.pomodoro_sessions[0].end_time, date_time_format)
+            time = datetime.time().toString(time_format)
+            return time
+    
+    @property
+    def date(self):
+        '''A property for the date of the Pomodoro.'''
+        if len(self.pomodoro_sessions) == 0:
+            return None
+        else:
+            datetime = QDateTime.fromString(self.pomodoro_sessions[0].starting_time, date_time_format)
+            date = datetime.date().toString(date_format)
+            return date
+        
+class PomodoroSession():
     '''PomodoroSession class (name: String, **attributes: Dictionary)
     
     This class holds the data for each PomodoroSession.'''
     
-    def __init__(self, number):
+    def __init__(self, number, **attr):
+        # Unique identifier based on the seconds since the epoch
+        self.UID = QDateTime.currentSecsSinceEpoch()
         self.number = number
         
-        # Temporary values, to be fixed later
-        self.starting_time = str(datetime.datetime.now())
-        # self.end_time = datetime.datetime.now()
-        # self.date = datetime.datetime.now()
+        self.starting_time = None
+        self.end_time = None
+        self.date = None
         
         self.tasks = []
-    
-    
+        
+        self.__dict__.update(attr)
 
 
 class Task():
-    def __init__(self, name):
+    '''Task class (name: String, **attributes: Dictionary)
+    
+    This class holds the data for each Task.'''
+    
+    def __init__(self, name, **attr):
         self.name = name
         self.finished = False
 
+        self.__dict__.update(attr)
+
 
 class Recipient():
+    '''Recipient class (email: String, **attributes: Dictionary)
+    
+    This class holds the data for each Recipient.'''
+    
     def __init__(self, email, **attr):
         self.email = email
+        
         self.__dict__.update(attr)
         
     def send_summary(summary):
+        '''A function to send a summary to the recipient.'''
         pass
 
-
+class Break():
+    '''An abstract class for breaks.'''
+    def __init__(self, period):
+        self.period = period
+        self.starting_time = None
+        self.end_time = None
+        
+class ShortBreak(Break):
+    '''Short break class inhereted from the abstract Break class. It's default period is 5 minutes'''
+    def __init__(self, period = 5):
+        super().__init__(period)
+        
+class LongBreak(Break):
+    '''Long break class inhereted from the abstract Break class. It's default period is 30 minutes'''
+    def __init__(self, period = 30):
+        super().__init__(period)
+        
+    
 class JsonEncoder(json.JSONEncoder):
     '''This class implements a JSON encoder to encode the given object to json.'''
     def default(self, obj):
-        return obj.__dict__ 
+        return obj.__dict__  
 
+
+def dict_to_user(user_dict):
+    '''A function to convert a dictionary to a User object. Returns a User object.'''
+    
+    # Create a User object from the user dictionary that contains all its attributes and data.
+    user = User(**user_dict)
+    
+    # Create the Projects and Subjects and other objects inside the User object from their dictionaries.
+    for i, project_dict in enumerate(user.projects):
+        user.projects[i] = Project(**project_dict)
+        for j, subject_dict in enumerate(user.projects[i].subjects):
+            user.projects[i].subjects[j] = Subject(**subject_dict)
+            for k, pomodoro_dict in enumerate(user.projects[i].subjects[j].pomodoros):
+                user.projects[i].subjects[j].pomodoros[k] = Pomodoro(**pomodoro_dict)
+                for l, session_dict in enumerate(user.projects[i].subjects[j].pomodoros[k].pomodoro_sessions):
+                    user.projects[i].subjects[j].pomodoros[k].pomodoro_sessions[l] = PomodoroSession(**session_dict)
+                    for m, task_dict in enumerate(user.projects[i].subjects[j].pomodoros[k].pomodoro_sessions[l].tasks):
+                        user.projects[i].subjects[j].pomodoros[k].pomodoro_sessions[l].tasks[m] = Task(**task_dict)
+    
+    # Create the Recipients inside the User object from their dictionaries.
+    for i, recipient_dict in enumerate(user.recipients):
+        user.recipients[i] = Recipient(**recipient_dict)
         
-        
-
-class Struct(object):
-    def __init__(self, data):
-        for name, value in data.items():
-            setattr(self, name, self._wrap(value))
-
-    def _wrap(self, value):
-        if isinstance(value, (tuple, list, set, frozenset)): 
-            return type(value)([self._wrap(v) for v in value])
-        else:
-            return Struct(value) if isinstance(value, dict) else value
+    # Return the full User object with all it's data.
+    return user

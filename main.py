@@ -1,5 +1,6 @@
 from time import time
 from PyQt5 import QtWidgets
+import PyQt5
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 import sys
@@ -7,6 +8,8 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
+from PyQt5.QtCore import QTimer, QDateTime, QTime
+
 
 from classes import *
 import shutil
@@ -40,12 +43,12 @@ class LoginUI(QDialog):
                 
         global users_list
         
-        
         # Fill the users list with all the users objects from the json file after converting them into User objects.
         # same as:
         # for user_dict in json_data:
         #     users_list.append(dict_to_user(user_dict))
-        users_list = [Struct(user_dict) for user_dict in json_data]
+        # users_list = [dict_to_user(user_dict) for user_dict in json_data]
+        users_list = {user_dict["email"]: dict_to_user(user_dict) for user_dict in json_data.values()}
         
         self.errorTextLogin.clear()
         self.errorTextSignUp.clear()
@@ -64,40 +67,34 @@ class LoginUI(QDialog):
         name = self.nameInputSignUp.text()
         email = self.emailInputSignUp.text()
         
-        # search for the email in the users list, if found, show an error message.
-        for user in users_list:
-            if email == user.email:
-                self.errorTextSignUp.setText("Email already registered. please log in.")
-                return
-        # if the name field is empty, show an error message.
-        if name == None:
-            self.errorTextSignUp.setText("Name cannot be empty.")
-            return
-            
-        # if the email is not found in the users list, create a new account.
-        user = User(name, email)
-        # add the account to the users list
-        users_list.append(user)
-        self.errorTextSignUp.setText("Account created for " + user.email + " You can now login")
+        if name == '' or email == '':
+            self.errorTextSignUp.setText("Name and email cannot be empty.")
+        elif users_list.get(email) is not None:
+            self.errorTextSignUp.setText("Email already registered. please log in.")
+        else:
+            # if the email is not found in the users list, create a new account.
+            user = User(name, email)
+            # add the account to the users list
+            users_list[email] = user
+            self.errorTextSignUp.setText("Account created for " + user.email + " You can now login")
         
         # Write the new users list to the json data file.
         save_data()
+        
  
     def login(self):
         '''A handler function for the login button click event.'''
         
         email = self.emailInputLogin.text()     # read the email the user entered
+        try:
+            global current_user
+            current_user = users_list[email]
+            self.go_main_menu()
+        except KeyError:
+            # if the email was not found, show an error message.
+            self.errorTextLogin.setText(f"No account for {email}, please sign up first.")
+
         
-        # Search for the user with the input email, if found, it is the current user and go to main menu.
-        for user in users_list:
-            if user.email == email:
-                global current_user
-                current_user = user
-                self.go_main_menu()
-                return
-        # if the email was not found, show an error message.
-        self.errorTextLogin.setText(f"No account for {email}, please sign up first.")
-    
     
         
     
@@ -109,9 +106,7 @@ class LoginUI(QDialog):
 
 
 class MainMenuUI(QDialog):
-    counter = 0
-    current_project = ""
-    current_subject = ""
+    
     def __init__(self):
         super(MainMenuUI,self).__init__()
         loadUi("./UI/mainMenu.ui",self)
@@ -143,6 +138,9 @@ class MainMenuUI(QDialog):
         self.selectProjectCombo.activated.connect(self.check_index)
         selected_index = self.addSubjectOnProjectCombo.currentIndex()
         
+        self.titleWorkspaceLabel.setText(f"{current_user.name}'s workspace")
+        self.recipientTitleLabel.setText(f"{current_user.name}'s emails")
+        
         self.projectDeleteCombo.activated.connect(self.check_index2)
         # self.addSubjectOnProjectCombo.activated.connect(self.check_index)
         
@@ -159,10 +157,7 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
         self.showSummaryProjectCombo.activated.connect(self.check_index3)
         
-        
 
-        
-    
     def check_index(self, index):
         self.selectSubjectCombo.clear()
         self.selectSubjectCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
@@ -268,90 +263,256 @@ class MainMenuUI(QDialog):
 
 
     def go_pomodro(self):
-        Pomodoro_Session = PomodoroUI()
-        widget.addWidget(Pomodoro_Session)
-        MainMenuUI.counter = 0
-        widget.setCurrentIndex(widget.currentIndex()+1)
+        
         index1 = self.selectProjectCombo.currentIndex()
         index2 = self.selectSubjectCombo.currentIndex()
+        global current_subject, current_project
+        current_subject = current_user.projects[index1].subjects[index2]
+        current_project = current_user.projects[index1]
+        save_data()
         
-        a = self.selectProjectCombo.currentText()
-        b = self.selectSubjectCombo.currentText()
-        MainMenuUI.current_subject = a
-        MainMenuUI.current_project = b
-        
-        if current_user.projects[index1].subjects[index2].PomodoroSessions:
-            current_session = current_user.projects[index1].subjects[index2].PomodoroSessions[-1].number
-            if  current_session >= MainMenuUI.counter:
-                MainMenuUI.counter += 1
-                MainMenuUI.counter += current_session
-                pomo_session = PomodoroSessions(MainMenuUI.counter)
-                current_user.projects[index1].subjects[index2].PomodoroSessions.append(pomo_session)
-                # current_pomodro.append(pomo_session)
-                save_data()
-        else:
-            MainMenuUI.counter += 1
-            pomo_session = PomodoroSessions(MainMenuUI.counter)
-            current_user.projects[index1].subjects[index2].PomodoroSessions.append(pomo_session)
-            print(MainMenuUI.counter)
-            # current_pomodro.append(pomo_session)
-            save_data()
+        Pomodoro_Session = PomodoroUI()
+        widget.addWidget(Pomodoro_Session)
+        widget.setCurrentIndex(widget.currentIndex()+1)
         # print(MainMenuUI.current_project,MainMenuUI.current_subject)
         
         
 class PomodoroUI(QDialog):
+    pomodoro_session_counter = 0
     def __init__(self):
         super(PomodoroUI,self).__init__()
         loadUi("./UI/pomodoro.ui",self)
         
-        self.goToMainMenuButton.clicked.connect(self.go_main_menu)
+        # Define the selected project, subject, pomodoro and session as global objects
+        global current_project, current_subject, current_pomodoro, current_pomodoro_session
+        
+        # Create a new Pomodoro and add it to the list
+        current_pomodoro = Pomodoro()
+        current_subject.pomodoros.append(current_pomodoro)
+        
+        # Set up event handlers
         self.addTask.clicked.connect(self.add_task)
+        self.tasksCombo.currentIndexChanged.connect(self.select_task)
+        self.labelAsNotFinishedButton.clicked.connect(self.change_task_status)
+        self.startStopButton.clicked.connect(self.start_pause_session)
+        self.doneButton.clicked.connect(self.end_session)
+        self.tasksCombo_2.currentIndexChanged.connect(self.update_task_status_button)
+        self.goToMainMenuButton.clicked.connect(self.goToMainMenu)
         
-
-
+        self.setup_session()
     
+    def setup_session(self):
+        '''A function to setup a new session and resets the PomodoroUI components.'''
+        # Create a new PomodoroSession and increase their count in the current pomodoro UI
+        global current_pomodoro_session
+        current_pomodoro_session = PomodoroSession(self.pomodoro_session_counter)
+        self.pomodoro_session_counter += 1
+        self.numberOfSession.setText(str(self.pomodoro_session_counter))
+        self.taskInput.setText("")
+        self.startStopButton.setText("Start")
+        self.tasksCombo.clear()
+        self.tasksCombo_2.clear()
+        self.update_task_status_button()
+        
+        # Create a new timer and time objects to be used for the countdown
+        self.timer = QTimer()
+        self.time = QTime(0, 25, 0) 
+        self.timer.timeout.connect(self.show_time)
+        
+        
     def add_task(self):
-        '''A handler function for the add recipient button click event.'''
-        task = self.addTask.text()   # Get the recipient email the user entered
-        # Check if it is already in the recipient list.
-        print(MainMenuUI.current_subject, MainMenuUI.current_project)
-        # print(MainMenuUI.current_subject2, MainMenuUI.current_project2)
-        if task == "":
-            self.errorTextRecipientsEmailLabel.setText("This field cannot be empty.")
+        task_name = self.taskInput.text()   # get the task name the user has entered
+        if task_name == "":                 # if it's empyt, exit the function
             return
-        else:
-            # selected_index2 = self.projectDeleteCombo.currentIndex()
-            # selected_index = self.subjectDeleteCombo.currentIndex()
-            # Create a new Recipient from the email the user has entered and add it to recipients list and the recipients menu.
-            task_name = Task(task)
-            current_user.projects[0].subjects[0].PomodoroSessions[0].tasks.append(task_name)
-            self.tasksCombo.addItem(task_name.name)
-            self.tasksCombo.setCurrentIndex(len(task_name.name)-1)   # Select the new recipient in the menu (last one)
-            save_data()
-
-    
-    def go_main_menu(self):
-        main_menu = MainMenuUI()
-        widget.addWidget(main_menu)
-        widget.setCurrentIndex(widget.currentIndex()+1)
         
-
+        # If the task name is not empty, create a new task and add it to the tasks list and combos
+        task = Task(task_name)
+        current_pomodoro_session.tasks.append(task)
+        self.tasksCombo.addItem(task.name)
+        self.tasksCombo.setCurrentIndex(self.tasksCombo.count()-1)
+        self.tasksCombo_2.addItem(task.name)
+        
+        # the start, label as finished, and done buttons are enabled only after a task is added
+        self.startStopButton.setEnabled(True)
+        self.labelAsNotFinishedButton.setEnabled(True)
+        self.doneButton.setEnabled(True)
+        save_data()
+        
+    def select_task(self, index):
+        # When the user selects a task from the tasks combo box, the current_task object is assigned to the selected task.
+        if index < 0: return
+        global current_task
+        current_task = current_pomodoro_session.tasks[index]
+    
+    def update_task_status_button(self):
+        # Handle the finished / not finished button text when a task is selected from the tasks combo box.
+        index = self.tasksCombo_2.currentIndex()
+        if index < 0: return
+        if current_pomodoro_session.tasks[index].finished:
+            self.labelAsNotFinishedButton.setText("Label as not finished")
+        else:
+            self.labelAsNotFinishedButton.setText("Label as finished")
+    
+        
+    def change_task_status(self):
+        '''A fuction that flips the status of the current task.'''
+        index = self.tasksCombo_2.currentIndex()
+        current_pomodoro_session.tasks[index].finished = not current_pomodoro_session.tasks[index].finished
+        save_data()
+        self.update_task_status_button()
+        
+        
+    def show_time(self):
+        # Check if the timer has reached 00:00:00 and end the session if so.
+        if self.time == QTime(0, 0, 0):
+            self.end_session()
+            return
+        # If the timer has not reached 00:00:00, subtract a second and display the new time.
+        self.time = self.time.addSecs(-1)
+        self.timeLabel.setText(self.time.toString("mm:ss"))
+        
+    def start_pause_session(self):
+        # if no task is selected, exit immediately
+        if self.tasksCombo.currentIndex() == -1:
+            return
+        # if the timer is active, pause it and update the button text
+        if self.timer.isActive():
+            self.timer.stop()
+            self.startStopButton.setText("Start")
+        else:       # if the timer is not active, start it and update the button text
+            self.timer.start(1000)
+            self.startStopButton.setText("Pause")
+            # if this is the first time the timer is started for this session, update the starting time and date of the session
+            if current_pomodoro_session.starting_time is None:
+                current_pomodoro_session.starting_time = QDateTime.currentDateTime().toString(date_time_format)
+                current_pomodoro_session.date = QDateTime.currentDateTime().toString(date_time_format)
+        
+        save_data()
+    
+    def end_session(self):
+        # Stop the timer and save the end time of the session
+        self.timer.stop()
+        current_pomodoro_session.end_time = QDateTime.currentDateTime().toString(date_time_format)
+        
+        # Show a message box asking the user if the selected task is finished
+        qm = QtWidgets.QMessageBox()
+        ret = qm.question(self,'', f"Is task {current_task.name} finished?", qm.Yes | qm.No)
+        if ret == qm.Yes:
+            current_task.finished = True
+        else:
+            current_task.finished = False
+        
+        # add the session to the sessions list
+        current_pomodoro.pomodoro_sessions.append(current_pomodoro_session)
+        save_data()
+        
+        # Logic for deciding if the next break is long or short
+        if self.pomodoro_session_counter < 4:       # Short Break
+            self.setup_session()            # setup for the next session
+            self.time = QTime(0, 25, 0)     # reset the timer
+            self.timeLabel.setText(self.time.toString("mm:ss"))
+            # go to shortBreakUI
+            shortBreakUI = ShortBreakUI()
+            widget.addWidget(shortBreakUI)
+            widget.setCurrentIndex(widget.count()-1)
+        else:                               # Long Break
+            # go to longBreakUI
+            longBreakUI = LongBreakUI()
+            widget.addWidget(longBreakUI)
+            widget.setCurrentIndex(widget.count()-1)
+        
+    def goToMainMenu(self):
+        widget.setCurrentIndex(1)
 
 class ShortBreakUI(QDialog):
     def __init__(self):
         super(ShortBreakUI,self).__init__()
         loadUi("./UI/shortBreak.ui",self)
+        
+        # Setup the event handlers
+        self.startButton.clicked.connect(self.startTimer)
+        self.skipButton.clicked.connect(self.stopTimer)
+        self.goToMainMenuButton.clicked.connect(self.goToMainMenu)
+        
+        global short_break
+        short_break = ShortBreak(5)
+        
+        # Create a new timer and time variables for the countdown
+        self.timer = QTimer()
+        self.time = QTime(0, 5, 0)
+        self.timer.timeout.connect(self.show_time)
+    
+    
+    def show_time(self):
+        # if the timer reaches 00:00:00, stop it and go to Pomodoro UI
+        if self.time == QTime(0, 0, 0):
+            self.stopTimer()
+            return
+        # if the timer has not reached 00:00:00, subtract 1 second from time
+        self.time = self.time.addSecs(-1)
+        self.timeLabel.setText(self.time.toString("mm:ss"))
+        
+    def startTimer(self):
+        if self.timer.isActive():       # if the timer is already running, pause it
+            self.timer.stop()
+            self.startButton.setText("Start")
+        else:                           # if the timer not already running, start it
+            self.timer.start(1000)
+            self.startButton.setText("Pause")
+    
+    def stopTimer(self):
+        self.timer.stop()
+        widget.setCurrentIndex(2)
+        
+    def goToMainMenu(self):
+        self.timer.stop()
+        widget.setCurrentIndex(1)
 
 class LongBreakUI(QDialog):
     def __init__(self):
         super(LongBreakUI,self).__init__()
         loadUi("./UI/longBreak.ui",self)
+        
+        # Setup the event handlers
+        self.startButton.clicked.connect(self.startTimer)
+        self.goToMainMenuButton.clicked.connect(self.stopTimer)
+        self.skipButton.clicked.connect(self.stopTimer)
+        
+        global long_break
+        long_break = ShortBreak(30)
+        
+        # Create a new timer and time variables for the countdown
+        self.timer = QTimer()
+        self.time = QTime(0, 30, 0)
+        self.timer.timeout.connect(self.show_time)
+    
+    
+    def show_time(self):
+        # if the timer reaches 00:00:00, stop it and go to main menu UI
+        if self.time == QTime(0, 0, 0):
+            self.stopTimer()
+            return
+        # if the timer has not reached 00:00:00, subtract 1 second from time
+        self.time = self.time.addSecs(-1)
+        self.timeLabel.setText(self.time.toString("mm:ss"))
+        
+    def startTimer(self):
+        if self.timer.isActive():       # if the timer is already running, pause it
+            self.timer.stop()
+            self.startButton.setText("Start")
+        else:                           # if the timer not already running, start it
+            self.timer.start(1000)
+            self.startButton.setText("Pause")
+    
+    def stopTimer(self):
+        self.timer.stop()
+        widget.setCurrentIndex(1)
 
 def save_data():
     '''A function that saves the data for all the users in a json file.
     Also creates a backup copy before.'''
     # backup the data file, in case the used file becomes corrupted.
-    shutil.copyfile(data_file, backup_file)
+    # shutil.copyfile(data_file, backup_file)
     
     # Convert the users list to dictionaries and save it to the json data file.
     with open(data_file, 'w') as f:
@@ -361,11 +522,6 @@ def save_data():
 app = QApplication(sys.argv)
 UI = LoginUI() # This line determines which screen you will load at first
 
-# You can also try one of other screens to see them.
-    # UI = MainMenuUI()
-    # UI = PomodoroUI()
-    # UI = ShortBreakUI()
-    # UI = LongBreakUI()
 
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(UI)
