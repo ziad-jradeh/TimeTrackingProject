@@ -175,6 +175,7 @@ class MainMenuUI(QDialog):
         self.showSummarySubjectCombo.clear()
         self.showSummarySubjectCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
         
+        
 
     
         
