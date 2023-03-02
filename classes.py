@@ -107,6 +107,18 @@ class PomodoroSession():
         
         self.__dict__.update(attr)
 
+    def get_summary(self):
+        finished_tasks = ""
+        unfinished_tasks = ""
+        for task in self.tasks:
+            if task.finished:
+                finished_tasks += task.name + "\n"
+            else:
+                unfinished_tasks += task.name + "\n"
+        s_time = QDateTime.fromString(self.starting_time, date_time_format).time().toString(time_format)
+        e_time = QDateTime.fromString(self.end_time, date_time_format).time().toString(time_format)
+        date = QDateTime.fromString(self.date, date_time_format).date().toString("dd/MM/yyyy")
+        return [date, s_time, e_time, finished_tasks, unfinished_tasks]
 
 class Task():
     '''Task class (name: String, **attributes: Dictionary)
