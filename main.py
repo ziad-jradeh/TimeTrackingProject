@@ -138,7 +138,8 @@ class MainMenuUI(QDialog):
         
         
         self.subjectDeleteCombo.clear()
-        self.subjectDeleteCombo.addItems([subject.name for subject in current_user.projects[selected_index].subjects])
+        if  len(current_user.projects) > 0:
+            self.subjectDeleteCombo.addItems([subject.name for subject in current_user.projects[selected_index].subjects])
         
         self.errorTextRecipientsEmailLabel.clear()
         self.errorTextProjectLabel.clear()
@@ -149,7 +150,7 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.clear()
         self.showSummaryProjectCombo.addItem("All")
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
-        self.showSummaryProjectCombo.currentIndexChanged.connect(self.check_index3)
+        self.showSummaryProjectCombo.activated.connect(self.check_index3)
         
         self.totalTrackedTimeDurationLabel.setText(current_user.total_tracked_time)
         self.show_summary()
@@ -164,7 +165,7 @@ class MainMenuUI(QDialog):
         self.subjectDeleteCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
         
     def check_index3(self, index):
-        if index == 0:
+        if index <= 0:
             self.showSummarySubjectCombo.clear()
             self.showSummarySubjectCombo.addItem("All")
         else:
@@ -203,24 +204,27 @@ class MainMenuUI(QDialog):
         save_data()
     
     def add_project(self):
-        project = self.addProjectInput.text()
-        if project == "":
+        project_name = self.addProjectInput.text()
+        if project_name == "":
             self.errorTextProjectLabel.setText("This field cannot be empty.")
             return
-        elif project in [i.name for i in current_user.projects]:
+        elif project_name in [i.name for i in current_user.projects]:
             self.errorTextProjectLabel.setText(f"{project} is already in the recipients list.")
         else:
-            project_name = Project(project)
+            project = Project(project_name)
             MainMenuUI.current_project2 = project_name
 
-            current_user.projects.append(project_name)
-            self.projectDeleteCombo.addItem(project_name.name)
+            current_user.projects.append(project)
+            self.projectDeleteCombo.addItem(project.name)
             self.projectDeleteCombo.setCurrentIndex(len(current_user.projects)-1)   # Select the new recipient in the menu (last one)
-            self.addSubjectOnProjectCombo.addItem(project_name.name)
+            self.addSubjectOnProjectCombo.addItem(project.name)
             self.addSubjectOnProjectCombo.setCurrentIndex(len(current_user.projects)-1)   # Select the new recipient in the menu (last one)
-            self.selectProjectCombo.addItem(project_name.name)
+            self.selectProjectCombo.addItem(project.name)
             self.selectProjectCombo.setCurrentIndex(len(current_user.projects)-1)   # Select the new recipient in the menu (last one)
-            self.errorTextProjectLabel.setText(f"{project} has been added.")
+            self.errorTextProjectLabel.setText(f"{project_name} has been added.")
+            self.showSummaryProjectCombo.clear()
+            self.showSummaryProjectCombo.addItem("All")
+            self.showSummaryProjectCombo.addItems([pro.name for pro in current_user.projects])
             save_data()
             
             
@@ -371,7 +375,7 @@ class MainMenuUI(QDialog):
         
         Pomodoro_Session = PomodoroUI()
         widget.addWidget(Pomodoro_Session)
-        widget.setCurrentIndex(widget.currentIndex()+1)
+        widget.setCurrentIndex(widget.count()-1)
         # print(MainMenuUI.current_project,MainMenuUI.current_subject)
         
         
@@ -486,7 +490,8 @@ class PomodoroUI(QDialog):
         else:       # if the timer is not active, start it and update the button text
             self.timer.start(1000)
             self.startStopButton.setText("Pause")
-            # if this is the first time the timer is started for this session, update the starting time and date of the session
+            # if this is the first time the timer is started for this session,
+            # update the starting time and date of the session
             if current_pomodoro_session.starting_time is None:
                 current_pomodoro_session.starting_time = QDateTime.currentDateTime().toString(date_time_format)
                 current_pomodoro_session.date = QDateTime.currentDateTime().toString(date_time_format)

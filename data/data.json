@@ -10,101 +10,71 @@
                         "name": "equations",
                         "pomodoros": [
                             {
-                                "UID": 1677778872,
-                                "pomodoro_sessions": []
-                            },
-                            {
-                                "UID": 1677779020,
-                                "pomodoro_sessions": []
-                            },
-                            {
-                                "UID": 1677846170,
+                                "UID": 1677862015,
                                 "pomodoro_sessions": [
                                     {
-                                        "UID": 1677846170,
+                                        "UID": 1677862015,
                                         "number": 0,
-                                        "starting_time": "03-03-2023 13:22:56",
-                                        "end_time": "03-03-2023 13:22:59",
-                                        "date": "03-03-2023 13:22:56",
+                                        "starting_time": "20-02-2023 17:37:08",
+                                        "end_time": "20-02-2023 17:47:16",
+                                        "date": "20-02-2023 17:37:08",
                                         "tasks": [
                                             {
-                                                "name": "test task",
+                                                "name": "Task 1",
                                                 "finished": true
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "UID": 1677850546,
-                                "pomodoro_sessions": [
-                                    {
-                                        "UID": 1677850546,
-                                        "number": 0,
-                                        "starting_time": "03-03-2023 14:36:05",
-                                        "end_time": "03-03-2023 14:36:16",
-                                        "date": "03-03-2023 14:36:05",
-                                        "tasks": [
+                                            },
                                             {
-                                                "name": "test",
+                                                "name": "Task 2",
                                                 "finished": true
+                                            },
+                                            {
+                                                "name": "Task 3",
+                                                "finished": false
                                             }
                                         ]
                                     },
                                     {
-                                        "UID": 1677850577,
+                                        "UID": 1677862037,
                                         "number": 1,
-                                        "starting_time": "03-03-2023 14:36:30",
-                                        "end_time": "03-03-2023 14:36:40",
-                                        "date": "03-03-2023 14:36:30",
+                                        "starting_time": "20-02-2023 17:37:32",
+                                        "end_time": "20-02-2023 17:57:40",
+                                        "date": "20-02-2023 17:37:32",
                                         "tasks": [
                                             {
-                                                "name": "ssss",
+                                                "name": "Task 4",
                                                 "finished": true
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "UID": 1677857230,
-                                "pomodoro_sessions": [
-                                    {
-                                        "UID": 1677857230,
-                                        "number": 0,
-                                        "starting_time": null,
-                                        "end_time": "03-03-2023 16:27:38",
-                                        "date": null,
-                                        "tasks": [
+                                            },
                                             {
-                                                "name": "Work on equations",
-                                                "finished": true
+                                                "name": "Task 5",
+                                                "finished": false
                                             }
                                         ]
                                     },
                                     {
-                                        "UID": 1677857259,
-                                        "number": 1,
-                                        "starting_time": null,
-                                        "end_time": "03-03-2023 16:28:03",
-                                        "date": null,
-                                        "tasks": []
-                                    },
-                                    {
-                                        "UID": 1677857284,
+                                        "UID": 1677862062,
                                         "number": 2,
-                                        "starting_time": null,
-                                        "end_time": "03-03-2023 16:28:06",
-                                        "date": null,
-                                        "tasks": []
+                                        "starting_time": "20-02-2023 17:47:50",
+                                        "end_time": "20-02-2023 17:47:57",
+                                        "date": "20-02-2023 17:47:50",
+                                        "tasks": [
+                                            {
+                                                "name": "Task 6",
+                                                "finished": false
+                                            }
+                                        ]
                                     },
                                     {
-                                        "UID": 1677857287,
+                                        "UID": 1677862086,
                                         "number": 3,
-                                        "starting_time": null,
-                                        "end_time": "03-03-2023 16:28:12",
-                                        "date": null,
-                                        "tasks": []
+                                        "starting_time": "20-02-2023 17:48:14",
+                                        "end_time": "20-02-2023 17:48:19",
+                                        "date": "20-02-2023 17:48:14",
+                                        "tasks": [
+                                            {
+                                                "name": "Task 7",
+                                                "finished": true
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -112,201 +82,93 @@
                     },
                     {
                         "name": "algebra",
-                        "pomodoros": []
-                    },
-                    {
-                        "name": "test",
-                        "pomodoros": []
-                    }
-                ]
-            },
-            {
-                "name": "Python",
-                "subjects": [
-                    {
-                        "name": "oop",
                         "pomodoros": [
                             {
-                                "UID": 1677779119,
+                                "UID": 1677862190,
                                 "pomodoro_sessions": [
                                     {
-                                        "UID": 1677779119,
+                                        "UID": 1677862190,
                                         "number": 0,
-                                        "starting_time": "01-03-2023 18:45:42",
-                                        "end_time": "02-03-2023 18:45:54",
-                                        "date": "02-03-2023 18:45:42",
+                                        "starting_time": "01-03-2023 17:51:59",
+                                        "end_time": "01-03-2023 17:52:02",
+                                        "date": "01-03-2023 17:51:59",
                                         "tasks": [
                                             {
-                                                "name": "task1",
-                                                "finished": true
-                                            },
-                                            {
-                                                "name": "task2",
+                                                "name": "Task 11",
                                                 "finished": false
                                             },
                                             {
-                                                "name": "task3",
+                                                "name": "Task 12",
                                                 "finished": true
+                                            },
+                                            {
+                                                "name": "Task 13",
+                                                "finished": false
                                             }
                                         ]
                                     },
                                     {
-                                        "UID": 1677779155,
+                                        "UID": 1677862324,
                                         "number": 1,
-                                        "starting_time": "01-03-2023 18:46:24",
-                                        "end_time": "02-03-2023 18:46:25",
-                                        "date": "02-03-2023 18:46:24",
+                                        "starting_time": "01-03-2023 17:52:13",
+                                        "end_time": "01-03-2023 17:52:17",
+                                        "date": "01-03-2023 17:52:13",
                                         "tasks": [
                                             {
-                                                "name": "task4",
+                                                "name": "Task 14",
+                                                "finished": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677862339,
+                                        "number": 2,
+                                        "starting_time": "01-03-2023 17:52:31",
+                                        "end_time": "01-03-2023 17:52:37",
+                                        "date": "01-03-2023 17:52:31",
+                                        "tasks": [
+                                            {
+                                                "name": "Task 15",
                                                 "finished": true
                                             },
                                             {
-                                                "name": "task5",
+                                                "name": "Task 16",
                                                 "finished": false
                                             }
                                         ]
                                     },
                                     {
-                                        "UID": 1677779186,
-                                        "number": 2,
-                                        "starting_time": "01-03-2023 18:47:05",
-                                        "end_time": "02-03-2023 18:47:10",
-                                        "date": "02-03-2023 18:47:05",
-                                        "tasks": [
-                                            {
-                                                "name": "task6",
-                                                "finished": true
-                                            },
-                                            {
-                                                "name": "task7",
-                                                "finished": false
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677779231,
+                                        "UID": 1677862357,
                                         "number": 3,
-                                        "starting_time": "03-03-2023 18:47:24",
-                                        "end_time": "03-03-2023 18:47:25",
-                                        "date": "02-03-2023 18:47:24",
+                                        "starting_time": "01-03-2023 17:52:44",
+                                        "end_time": "01-03-2023 17:52:47",
+                                        "date": "01-03-2023 17:52:44",
                                         "tasks": [
                                             {
-                                                "name": "task8",
-                                                "finished": false
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "UID": 1677790812,
-                                "pomodoro_sessions": [
-                                    {
-                                        "UID": 1677790812,
-                                        "number": 0,
-                                        "starting_time": "02-03-2023 22:00:25",
-                                        "end_time": "02-03-2023 22:00:34",
-                                        "date": "02-03-2023 22:00:25",
-                                        "tasks": [
-                                            {
-                                                "name": "test1",
-                                                "finished": true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677790841,
-                                        "number": 1,
-                                        "starting_time": "02-03-2023 22:00:59",
-                                        "end_time": "02-03-2023 22:01:03",
-                                        "date": "02-03-2023 22:00:59",
-                                        "tasks": [
-                                            {
-                                                "name": "sada",
-                                                "finished": true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677790864,
-                                        "number": 2,
-                                        "starting_time": "02-03-2023 22:01:14",
-                                        "end_time": "02-03-2023 22:01:16",
-                                        "date": "02-03-2023 22:01:14",
-                                        "tasks": [
-                                            {
-                                                "name": "asdsad",
-                                                "finished": true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677790877,
-                                        "number": 3,
-                                        "starting_time": "02-03-2023 22:01:27",
-                                        "end_time": "02-03-2023 22:01:31",
-                                        "date": "02-03-2023 22:01:27",
-                                        "tasks": [
-                                            {
-                                                "name": "hashdsa",
+                                                "name": "task 17",
                                                 "finished": true
                                             }
                                         ]
                                     }
                                 ]
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "name": "calc",
+                        "pomodoros": [
                             {
-                                "UID": 1677854999,
+                                "UID": 1677862716,
                                 "pomodoro_sessions": [
                                     {
-                                        "UID": 1677854999,
+                                        "UID": 1677862716,
                                         "number": 0,
-                                        "starting_time": "03-03-2023 15:50:08",
-                                        "end_time": "03-03-2023 15:50:13",
-                                        "date": "03-03-2023 15:50:08",
+                                        "starting_time": "03-03-2023 17:58:47",
+                                        "end_time": "03-03-2023 17:58:49",
+                                        "date": "03-03-2023 17:58:47",
                                         "tasks": [
                                             {
                                                 "name": "test",
-                                                "finished": true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677855015,
-                                        "number": 1,
-                                        "starting_time": "03-03-2023 15:50:28",
-                                        "end_time": "03-03-2023 15:50:30",
-                                        "date": "03-03-2023 15:50:28",
-                                        "tasks": [
-                                            {
-                                                "name": "aaa",
-                                                "finished": true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677855031,
-                                        "number": 2,
-                                        "starting_time": "03-03-2023 15:50:38",
-                                        "end_time": "03-03-2023 15:50:40",
-                                        "date": "03-03-2023 15:50:38",
-                                        "tasks": [
-                                            {
-                                                "name": "sss",
-                                                "finished": false
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "UID": 1677855041,
-                                        "number": 3,
-                                        "starting_time": "03-03-2023 15:50:48",
-                                        "end_time": "03-03-2023 15:50:50",
-                                        "date": "03-03-2023 15:50:48",
-                                        "tasks": [
-                                            {
-                                                "name": "ccc",
                                                 "finished": true
                                             }
                                         ]
@@ -318,52 +180,147 @@
                 ]
             },
             {
-                "name": "Chemestry",
-                "subjects": []
+                "name": "python",
+                "subjects": [
+                    {
+                        "name": "oop",
+                        "pomodoros": [
+                            {
+                                "UID": 1677862466,
+                                "pomodoro_sessions": [
+                                    {
+                                        "UID": 1677862466,
+                                        "number": 0,
+                                        "starting_time": "03-03-2023 17:54:37",
+                                        "end_time": "03-03-2023 17:54:46",
+                                        "date": "03-03-2023 17:54:37",
+                                        "tasks": [
+                                            {
+                                                "name": "Task 21",
+                                                "finished": true
+                                            },
+                                            {
+                                                "name": "Task 22",
+                                                "finished": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677862488,
+                                        "number": 1,
+                                        "starting_time": "03-03-2023 17:54:57",
+                                        "end_time": "03-03-2023 17:55:01",
+                                        "date": "03-03-2023 17:54:57",
+                                        "tasks": [
+                                            {
+                                                "name": "Task 23",
+                                                "finished": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677862502,
+                                        "number": 2,
+                                        "starting_time": "03-03-2023 17:55:20",
+                                        "end_time": "03-03-2023 17:55:24",
+                                        "date": "03-03-2023 17:55:20",
+                                        "tasks": [
+                                            {
+                                                "name": "Task 24",
+                                                "finished": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677862524,
+                                        "number": 3,
+                                        "starting_time": "03-03-2023 17:55:31",
+                                        "end_time": "03-03-2023 17:55:33",
+                                        "date": "03-03-2023 17:55:31",
+                                        "tasks": [
+                                            {
+                                                "name": "task 25",
+                                                "finished": false
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "lists",
+                        "pomodoros": []
+                    }
+                ]
+            },
+            {
+                "name": "chemestry",
+                "subjects": [
+                    {
+                        "name": "carbon",
+                        "pomodoros": [
+                            {
+                                "UID": 1677862642,
+                                "pomodoro_sessions": [
+                                    {
+                                        "UID": 1677862642,
+                                        "number": 0,
+                                        "starting_time": "03-03-2023 17:57:30",
+                                        "end_time": "03-03-2023 17:57:33",
+                                        "date": "03-03-2023 17:57:30",
+                                        "tasks": [
+                                            {
+                                                "name": "task 31",
+                                                "finished": true
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "oxygen",
+                        "pomodoros": []
+                    }
+                ]
             }
         ],
         "recipients": [
-            {
-                "email": "mom@mail.com"
-            },
-            {
-                "email": "dad@mail.com"
-            },
-            {
-                "email": "bro@mail.com"
-            },
             {
                 "email": "friend@mail.com"
-            }
-        ],
-        "total_tracked_time": "00:54:22"
-    },
-    "ziad@gmail.com": {
-        "name": "Ziad",
-        "email": "ziad@gmail.com",
-        "projects": [],
-        "recipients": [
-            {
-                "email": "mother@mail.com"
             },
             {
-                "email": "friend1@mail.com"
+                "email": "father@mail.com"
+            }
+        ],
+        "total_tracked_time": "03:12:54"
+    },
+    "jane@gmail.com": {
+        "name": "Jane",
+        "email": "jane@gmail.com",
+        "projects": [
+            {
+                "name": "PE",
+                "subjects": [
+                    {
+                        "name": "soccor",
+                        "pomodoros": []
+                    }
+                ]
             },
             {
-                "email": "friend2@mail.com"
+                "name": "math",
+                "subjects": [
+                    {
+                        "name": "algebra",
+                        "pomodoros": []
+                    }
+                ]
             }
         ],
-        "total_tracked_time": "00:54:15"
-    },
-    "test@mail.com": {
-        "name": "test",
-        "email": "test@mail.com",
-        "projects": [],
-        "recipients": [
-            {
-                "email": "aaaa"
-            }
-        ],
-        "total_tracked_time": "00:54:15"
+        "recipients": [],
+        "total_tracked_time": "00:00:00"
     }
 }
