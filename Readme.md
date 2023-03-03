@@ -30,14 +30,14 @@
 * After each session of pomodoro, the user can have a break for five minutes or they can skip the break if the user wants to. 
 
 
-![shortbreak](UI/UIScreenshots/04-shortbreak.png)
+![shortbreak](UI/UIScreenshots/04-Shortbreak.png)
 
 
 ## Long break
 
 * After four sessions of pomodoro, the user can have a break for thirty minutes or they can skip the break also. 
 
-![Longbreak](UI/UIScreenshots/05-longbreak.png)
+![Longbreak](UI/UIScreenshots/05-LongBreak.png)
 
 
 
