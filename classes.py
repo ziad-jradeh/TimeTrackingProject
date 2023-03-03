@@ -1,6 +1,10 @@
 import json
 from PyQt5.QtCore import QDateTime
 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
+
 date_time_format = "dd-MM-yyyy HH:mm:ss"
 time_format = "HH:mm:ss"
 date_format = "dd-MM-yyyy"
@@ -108,14 +112,14 @@ class PomodoroSession():
         
         self.__dict__.update(attr)
 
-    def get_summary(self):
+    def get_summary(self, new_line = '\n'):
         finished_tasks = ""
         unfinished_tasks = ""
         for task in self.tasks:
             if task.finished:
-                finished_tasks += task.name + "\n"
+                finished_tasks += task.name + new_line
             else:
-                unfinished_tasks += task.name + "\n"
+                unfinished_tasks += task.name + new_line
         s_time = QDateTime.fromString(self.starting_time, date_time_format).time().toString(time_format)
         e_time = QDateTime.fromString(self.end_time, date_time_format).time().toString(time_format)
         date = QDateTime.fromString(self.date, date_time_format).date().toString("dd/MM/yyyy")
@@ -143,9 +147,30 @@ class Recipient():
         
         self.__dict__.update(attr)
         
-    def send_summary(summary):
+    def send_summary(self, html_data):
         '''A function to send a summary to the recipient.'''
-        pass
+       
+        to_address = 'ziad.jradeh@gmail.com'
+        message = MIMEMultipart()
+        message['From'] = 'selampomodoro@gmail.com'
+        message['To'] = to_address
+        message['Subject'] = 'Pomodoro Session Data'
+        
+        # message body
+        body = MIMEText(html_data, 'html')
+        message.attach(body)
+
+        # create  SMTP server
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        
+        # login
+        email = 'selampomodoro@gmail.com'
+        password = 'kdgwbgjveajwjxvl'
+        server.login(email, password)
+
+        server.sendmail(email, to_address, message.as_string())
+        server.quit()
 
 class Break():
     '''An abstract class for breaks.'''

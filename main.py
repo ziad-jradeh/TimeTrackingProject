@@ -119,6 +119,7 @@ class MainMenuUI(QDialog):
         self.subjectDeleteButton.clicked.connect(self.delete_subject)
         self.startPomodoroButton.clicked.connect(self.go_pomodro)    
         self.showSummaryButton.clicked.connect(self.show_summary)
+        self.sendEmailThisSummaryButton.clicked.connect(self.send_summary)
 
         # Load the recipients emails to the deleteRecipientCombo after clearing it.
         self.deleteRecipientCombo.clear()
@@ -160,6 +161,7 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
         self.showSummaryProjectCombo.currentIndexChanged.connect(self.check_index3)
         
+        self.show_summary()
         
 
     def check_index(self, index):
@@ -288,11 +290,13 @@ class MainMenuUI(QDialog):
                 for pomodoro_session in pomodoro.pomodoro_sessions:
                     data.append(pomodoro_session)
             #data = [session.get_summary() for session in current_user.projects[project_index-1].subjects[subject_index-1].pomodoros[0].pomodoro_sessions]
-        
+        global period_text
         period_text = self.showSummaryPeriodCombo.currentText()
         
         end = QDateTime.currentDateTime()
         start = QDateTime.currentDateTime()
+        
+        
         filtered_sessions = []
         
         if period_text == 'All':
@@ -323,16 +327,25 @@ class MainMenuUI(QDialog):
             for col in range(5):
                 item = QTableWidgetItem(str(summary[row][col]))  # create a QTableWidgetItem for each cell
                 self.summaryTableValuesWidget.setItem(row, col, item)  # add the item to the table
-    
-
-
-    # pomodro = [{"date": "23-04-2023", "start_time": "12:00", "end_time": "13:00","tasks":["task1", "task2", "task3"]}]
-    # self.summaryTableValuesWidget.setColumnCount(len(pomodro.keys()))
-        # for key in pomodro:
-            
-        # self.setHorizontalHeaderLabels(a)
+        global summary_html
+        summary_html = [session.get_summary("<br>") for session in filtered_sessions]
         
-        # self.summaryTableValuesWidget.setRowCount(5)
+    
+    def send_summary(self):
+         # html table 
+        
+        table_html = '<table><tr><th>Date</th><th>Starting Time</th><th>End Time</th><th>Success(Tasks)</th><th>Failure(Tasks)</th></tr>'
+        for row in summary_html:
+            table_html += '<tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(*row)  
+        table_html += '</table>'
+        
+        html_data = f'Pomodoro Data of {current_user.name} for {period_text}:<br>{table_html}<br>Total Tracked Time: {current_user.total_tracked_time} minutes'
+        
+        current_user.recipients[0].send_summary(html_data)
+
+        # for recipient in current_user.recipients:
+        #     recipient.send_summary(html_data)
+
 
    
 
