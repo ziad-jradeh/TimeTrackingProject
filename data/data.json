@@ -65,6 +65,48 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "UID": 1677857230,
+                                "pomodoro_sessions": [
+                                    {
+                                        "UID": 1677857230,
+                                        "number": 0,
+                                        "starting_time": null,
+                                        "end_time": "03-03-2023 16:27:38",
+                                        "date": null,
+                                        "tasks": [
+                                            {
+                                                "name": "Work on equations",
+                                                "finished": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "UID": 1677857259,
+                                        "number": 1,
+                                        "starting_time": null,
+                                        "end_time": "03-03-2023 16:28:03",
+                                        "date": null,
+                                        "tasks": []
+                                    },
+                                    {
+                                        "UID": 1677857284,
+                                        "number": 2,
+                                        "starting_time": null,
+                                        "end_time": "03-03-2023 16:28:06",
+                                        "date": null,
+                                        "tasks": []
+                                    },
+                                    {
+                                        "UID": 1677857287,
+                                        "number": 3,
+                                        "starting_time": null,
+                                        "end_time": "03-03-2023 16:28:12",
+                                        "date": null,
+                                        "tasks": []
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -289,6 +331,9 @@
             },
             {
                 "email": "bro@mail.com"
+            },
+            {
+                "email": "friend@mail.com"
             }
         ],
         "total_tracked_time": "00:54:22"

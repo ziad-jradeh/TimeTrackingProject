@@ -131,7 +131,7 @@ class MainMenuUI(QDialog):
         selected_index = self.addSubjectOnProjectCombo.currentIndex()
         
         self.titleWorkspaceLabel.setText(f"{current_user.name}'s workspace")
-        self.recipientTitleLabel.setText(f"{current_user.name}'s emails")
+        self.recipientTitleLabel.setText(f"{current_user.name}'s recipients")
         
         self.projectDeleteCombo.activated.connect(self.check_index2)
         # self.addSubjectOnProjectCombo.activated.connect(self.check_index)
