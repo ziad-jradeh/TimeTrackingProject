@@ -429,12 +429,12 @@ color:#4D455D;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>7</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-color:red;</string>
+color:#F5E9CF;</string>
       </property>
       <property name="text">
        <string/>
@@ -593,12 +593,12 @@ color:#4D455D;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>6</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-color:black;</string>
+color:#F5E9CF;</string>
       </property>
       <property name="text">
        <string/>
@@ -863,12 +863,12 @@ color:#4D455D;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>6</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-color:black;</string>
+color:#F5E9CF;</string>
       </property>
       <property name="text">
        <string/>

@@ -19,8 +19,8 @@ class User():
         self.email = email
         self.projects = []
         self.recipients = []
-        
         self.total_tracked_time = QTime(0, 0, 0).toString(time_format)
+        
         # Load the attributes from a dictionary that contains all the attributes
         self.__dict__.update(attr)
     
