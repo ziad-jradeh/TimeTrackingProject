@@ -355,8 +355,8 @@ class MainMenuUI(QDialog):
         
         html_data += f'<h1>Pomodoro Data of {current_user.name} for {period_text}:</h1><br><h2>Total Tracked Time: {current_user.total_tracked_time}</h2><br>{table_html}'
         
+        
         current_user.recipients[0].send_summary(html_data)
-
         # for recipient in current_user.recipients:
         #     recipient.send_summary(html_data)
 
