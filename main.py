@@ -6,8 +6,6 @@ from PyQt5.uic import loadUi
 import sys
 
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication
-from PyQt5.uic import loadUi
 from PyQt5.QtCore import QTimer, QDateTime, QTime, QDate
 
 
@@ -44,10 +42,6 @@ class LoginUI(QDialog):
         global users_list
         
         # Fill the users list with all the users objects from the json file after converting them into User objects.
-        # same as:
-        # for user_dict in json_data:
-        #     users_list.append(dict_to_user(user_dict))
-        # users_list = [dict_to_user(user_dict) for user_dict in json_data]
         users_list = {user_dict["email"]: dict_to_user(user_dict) for user_dict in json_data.values()}
         
         self.errorTextLogin.clear()
@@ -94,10 +88,6 @@ class LoginUI(QDialog):
             # if the email was not found, show an error message.
             self.errorTextLogin.setText(f"No account for {email}, please sign up first.")
 
-        
-    
-        
-    
 
     def go_main_menu(self):
         main_menu = MainMenuUI()
@@ -161,6 +151,7 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
         self.showSummaryProjectCombo.currentIndexChanged.connect(self.check_index3)
         
+        self.totalTrackedTimeDurationLabel.setText(current_user.total_tracked_time)
         self.show_summary()
         
 
@@ -271,6 +262,7 @@ class MainMenuUI(QDialog):
         save_data()
     
     def show_summary(self):
+        self.totalTrackedTimeDurationLabel.setText(current_user.total_tracked_time)
         project_index = self.showSummaryProjectCombo.currentIndex()
         subject_index = self.showSummarySubjectCombo.currentIndex()
         data = []
@@ -333,13 +325,31 @@ class MainMenuUI(QDialog):
     
     def send_summary(self):
          # html table 
-        
+        html_data = '''<head>
+                    <style>
+                    table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+
+                    td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: #dddddd;
+                    }
+                    </style>
+                    </head>'''
         table_html = '<table><tr><th>Date</th><th>Starting Time</th><th>End Time</th><th>Success(Tasks)</th><th>Failure(Tasks)</th></tr>'
         for row in summary_html:
             table_html += '<tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(*row)  
         table_html += '</table>'
         
-        html_data = f'Pomodoro Data of {current_user.name} for {period_text}:<br>{table_html}<br>Total Tracked Time: {current_user.total_tracked_time} minutes'
+        html_data += f'<h1>Pomodoro Data of {current_user.name} for {period_text}:</h1><br><h2>Total Tracked Time: {current_user.total_tracked_time}</h2><br>{table_html}'
         
         current_user.recipients[0].send_summary(html_data)
 
@@ -460,6 +470,10 @@ class PomodoroUI(QDialog):
         # If the timer has not reached 00:00:00, subtract a second and display the new time.
         self.time = self.time.addSecs(-1)
         self.timeLabel.setText(self.time.toString("mm:ss"))
+        
+        # add a second to the total tracked time of the user
+        current_user.total_tracked_time = QTime.fromString(current_user.total_tracked_time, time_format).addSecs(1).toString(time_format)
+        save_data()
         
     def start_pause_session(self):
         # if no task is selected, exit immediately

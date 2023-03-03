@@ -1,5 +1,5 @@
 import json
-from PyQt5.QtCore import QDateTime
+from PyQt5.QtCore import QDateTime, QTime
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -20,7 +20,7 @@ class User():
         self.projects = []
         self.recipients = []
         
-        self.total_tracked_time = 0
+        self.total_tracked_time = QTime(0, 0, 0).toString(time_format)
         # Load the attributes from a dictionary that contains all the attributes
         self.__dict__.update(attr)
     
