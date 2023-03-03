@@ -8,7 +8,7 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
-from PyQt5.QtCore import QTimer, QDateTime, QTime
+from PyQt5.QtCore import QTimer, QDateTime, QTime, QDate
 
 
 from classes import *
@@ -158,7 +158,7 @@ class MainMenuUI(QDialog):
         self.showSummaryProjectCombo.clear()
         self.showSummaryProjectCombo.addItem("All")
         self.showSummaryProjectCombo.addItems([project.name for project in current_user.projects])
-        self.showSummaryProjectCombo.activated.connect(self.check_index3)
+        self.showSummaryProjectCombo.currentIndexChanged.connect(self.check_index3)
         
         
 
@@ -171,8 +171,13 @@ class MainMenuUI(QDialog):
         self.subjectDeleteCombo.addItems([subject.name for subject in current_user.projects[index].subjects])
         
     def check_index3(self, index):
-        self.showSummarySubjectCombo.clear()
-        self.showSummarySubjectCombo.addItems([subject.name for subject in current_user.projects[index-1].subjects])
+        if index == 0:
+            self.showSummarySubjectCombo.clear()
+            self.showSummarySubjectCombo.addItem("All")
+        else:
+            self.showSummarySubjectCombo.clear()
+            self.showSummarySubjectCombo.addItem("All")
+            self.showSummarySubjectCombo.addItems([subject.name for subject in current_user.projects[index-1].subjects])
         
         
 
@@ -266,23 +271,57 @@ class MainMenuUI(QDialog):
     def show_summary(self):
         project_index = self.showSummaryProjectCombo.currentIndex()
         subject_index = self.showSummarySubjectCombo.currentIndex()
-        
+        data = []
         if project_index == 0:
-            data = []
-            self.showSummarySubjectCombo.addItem("All")
             for project in current_user.projects:
                 for subject in project.subjects:
                     for pomodoro in subject.pomodoros:
                         for pomodoro_session in pomodoro.pomodoro_sessions:
-                            data.append(pomodoro_session.get_summary())
-                            
-        else:    
-            data = [session.get_summary() for session in current_user.projects[project_index-1].subjects[subject_index].pomodoros[0].pomodoro_sessions]
-            
-        self.summaryTableValuesWidget.setRowCount(len(data))  # set the number of rows in the table
-        for row in range(len(data)):
+                            data.append(pomodoro_session)
+        elif subject_index == 0:
+            for subject in current_user.projects[project_index-1].subjects:
+                for pomodoro in subject.pomodoros:
+                    for pomodoro_session in pomodoro.pomodoro_sessions:
+                        data.append(pomodoro_session)      
+        else:
+            for pomodoro in current_user.projects[project_index-1].subjects[subject_index-1].pomodoros:
+                for pomodoro_session in pomodoro.pomodoro_sessions:
+                    data.append(pomodoro_session)
+            #data = [session.get_summary() for session in current_user.projects[project_index-1].subjects[subject_index-1].pomodoros[0].pomodoro_sessions]
+        
+        period_text = self.showSummaryPeriodCombo.currentText()
+        
+        end = QDateTime.currentDateTime()
+        start = QDateTime.currentDateTime()
+        filtered_sessions = []
+        
+        if period_text == 'All':
+            filtered_sessions = data
+        elif period_text == 'Today':
+            start.setTime(QTime(0, 0, 0))
+            for session in data:
+                session_start = QDateTime.fromString(session.starting_time, date_time_format)
+                if end >= session_start >= start:
+                    filtered_sessions.append(session)
+        elif period_text == "This week":
+            start = start.addDays(-7)
+            for session in data:
+                session_start = QDateTime.fromString(session.starting_time, date_time_format)
+                if end >= session_start >= start:
+                    filtered_sessions.append(session)
+        elif period_text == "This month":
+            start = start.addDays(-30)
+            for session in data:
+                session_start = QDateTime.fromString(session.starting_time, date_time_format)
+                if end >= session_start >= start:
+                    filtered_sessions.append(session)
+        
+        summary = [session.get_summary() for session in filtered_sessions]
+        
+        self.summaryTableValuesWidget.setRowCount(len(summary))  # set the number of rows in the table
+        for row in range(len(summary)):
             for col in range(5):
-                item = QTableWidgetItem(str(data[row][col]))  # create a QTableWidgetItem for each cell
+                item = QTableWidgetItem(str(summary[row][col]))  # create a QTableWidgetItem for each cell
                 self.summaryTableValuesWidget.setItem(row, col, item)  # add the item to the table
     
 
@@ -463,6 +502,7 @@ class PomodoroUI(QDialog):
 
         
     def goToMainMenu(self):
+        save_data()
         widget.setCurrentIndex(1)
 
 class ShortBreakUI(QDialog):
@@ -507,6 +547,7 @@ class ShortBreakUI(QDialog):
         
     def goToMainMenu(self):
         self.timer.stop()
+        save_data()
         widget.setCurrentIndex(1)
 
 class LongBreakUI(QDialog):
@@ -547,6 +588,7 @@ class LongBreakUI(QDialog):
     
     def stopTimer(self):
         self.timer.stop()
+        save_data()
         widget.setCurrentIndex(1)
 
 def save_data():

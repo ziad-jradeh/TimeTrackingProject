@@ -2,7 +2,7 @@ import json
 from PyQt5.QtCore import QDateTime
 
 date_time_format = "dd-MM-yyyy HH:mm:ss"
-time_format = "HH:mm"
+time_format = "HH:mm:ss"
 date_format = "dd-MM-yyyy"
 
 class User():
@@ -16,6 +16,7 @@ class User():
         self.projects = []
         self.recipients = []
         
+        self.total_tracked_time = 0
         # Load the attributes from a dictionary that contains all the attributes
         self.__dict__.update(attr)
     
@@ -66,7 +67,7 @@ class Pomodoro():
             return None
         else:
             datetime = QDateTime.fromString(self.pomodoro_sessions[0].starting_time, date_time_format)
-            time = datetime.time().toString(time_format)
+            time = datetime.time()
             return time
     
     @property
@@ -76,7 +77,7 @@ class Pomodoro():
             return None
         else:
             datetime = QDateTime.fromString(self.pomodoro_sessions[0].end_time, date_time_format)
-            time = datetime.time().toString(time_format)
+            time = datetime.time()
             return time
     
     @property
@@ -86,7 +87,7 @@ class Pomodoro():
             return None
         else:
             datetime = QDateTime.fromString(self.pomodoro_sessions[0].starting_time, date_time_format)
-            date = datetime.date().toString(date_format)
+            date = datetime.date()
             return date
         
 class PomodoroSession():

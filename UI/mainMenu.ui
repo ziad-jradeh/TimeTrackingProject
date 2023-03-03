@@ -1079,11 +1079,6 @@ border-radius:40px;
         <string>This month</string>
        </property>
       </item>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
      </widget>
      <widget class="QLabel" name="trackingHistoryTitleText">
       <property name="geometry">
