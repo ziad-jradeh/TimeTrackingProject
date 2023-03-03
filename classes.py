@@ -150,8 +150,9 @@ class Recipient():
     def send_summary(self, html_data):
         '''A function to send a summary to the recipient.'''
        
-        to_address = 'ziad.jradeh@gmail.com'
-        # to_address = self.email
+        
+        to_address = self.email
+        
         message = MIMEMultipart()
         message['From'] = 'selampomodoro@gmail.com'
         message['To'] = to_address
