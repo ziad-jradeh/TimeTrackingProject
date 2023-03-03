@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(77, 69, 93);</string>
    </property>
    <widget class="QWidget" name="userWorkspaceWidget" native="true">
     <property name="enabled">
@@ -41,7 +41,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(126, 221, 194);
+     <string notr="true">border-color: rgb(245, 233, 207);
 color:rgb(255,255,255);
 
 border-radius:60px;
@@ -67,7 +67,7 @@ border-radius:60px;
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">color:rgb(0,0,0);</string>
+      <string notr="true">color:#F5E9CF;</string>
      </property>
      <property name="text">
       <string>Bahadir's Workspace</string>
@@ -89,8 +89,8 @@ border-radius:60px;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(87, 128, 115, 128);
-border-radius:20px;
+      <string notr="true">background-color:#E96479;
+border-radius:10px;
 </string>
      </property>
      <widget class="QPushButton" name="projectDeleteButton">
@@ -105,13 +105,14 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Delete</string>
@@ -122,8 +123,8 @@ color:rgb(255, 255, 255);</string>
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>51</width>
-        <height>18</height>
+        <width>71</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -154,7 +155,9 @@ color:rgb(255, 255, 255);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(168, 72, 88);
+border-radius:0px;
+</string>
       </property>
       <item>
        <property name="text">
@@ -186,8 +189,8 @@ color:rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(87, 128, 115, 128);
-border-radius:20px;
+      <string notr="true">background-color:#E96479;
+border-radius:10px;
 </string>
      </property>
      <widget class="QPushButton" name="subjectDeleteButton">
@@ -202,13 +205,14 @@ border-radius:20px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Delete</string>
@@ -219,8 +223,8 @@ color:rgb(255, 255, 255);</string>
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>51</width>
-        <height>18</height>
+        <width>71</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -251,7 +255,9 @@ color:rgb(255, 255, 255);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(168, 72, 88);
+border-radius:0px;
+</string>
       </property>
       <item>
        <property name="text">
@@ -283,8 +289,8 @@ color:rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(87, 128, 115, 128);
-border-radius:30px;
+      <string notr="true">background-color:#E96479;
+border-radius:10px;
 </string>
      </property>
      <widget class="QPushButton" name="deleteRecipientButton">
@@ -299,13 +305,14 @@ border-radius:30px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Delete</string>
@@ -348,7 +355,9 @@ color:rgb(255, 255, 255);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(168, 72, 88);
+border-radius:0px;
+</string>
       </property>
       <item>
        <property name="text">
@@ -396,13 +405,14 @@ border-radius:10px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Add</string>
@@ -427,7 +437,10 @@ color:rgb(255, 255, 255);</string>
 color:red;</string>
       </property>
       <property name="text">
-       <string>error text</string>
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -445,17 +458,17 @@ color:red;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(255, 96, 86);
+     <string notr="true">
 color:rgb(255,255,255);
 
-border-radius:60px;</string>
+border-radius:10px;</string>
     </property>
     <widget class="QLabel" name="startTimeTrackingLabel">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>10</y>
-       <width>210</width>
+       <x>40</x>
+       <y>0</y>
+       <width>301</width>
        <height>31</height>
       </rect>
      </property>
@@ -470,7 +483,7 @@ border-radius:60px;</string>
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">color:rgb(0,0,0);</string>
+      <string notr="true">color:#F5E9CF;</string>
      </property>
      <property name="text">
       <string>Start Time Tracking</string>
@@ -492,8 +505,8 @@ border-radius:60px;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(193, 81, 76, 125);
-border-radius:30px;
+      <string notr="true">background-color:#E96479;
+border-radius:10px;
 </string>
      </property>
      <widget class="QLabel" name="addProjectLabel">
@@ -530,7 +543,7 @@ border-radius:30px;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>30</y>
+        <y>40</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -556,16 +569,17 @@ border-radius:10px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
-       <string>Add New Project</string>
+       <string>Add Project</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="errorTextProjectLabel">
@@ -587,7 +601,10 @@ color:rgb(255, 255, 255);</string>
 color:black;</string>
       </property>
       <property name="text">
-       <string>error text</string>
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -604,7 +621,7 @@ color:black;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(193, 81, 76, 125);
+      <string notr="true">background-color:#E96479;
 border-radius:20px;
 </string>
      </property>
@@ -613,7 +630,7 @@ border-radius:20px;
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>51</width>
+        <width>71</width>
         <height>18</height>
        </rect>
       </property>
@@ -638,14 +655,14 @@ border-radius:20px;
      <widget class="QComboBox" name="selectProjectCombo">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>100</x>
         <y>10</y>
-        <width>231</width>
+        <width>211</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(168, 72, 88);</string>
       </property>
       <item>
        <property name="text">
@@ -668,7 +685,7 @@ border-radius:20px;
        <rect>
         <x>20</x>
         <y>50</y>
-        <width>51</width>
+        <width>71</width>
         <height>18</height>
        </rect>
       </property>
@@ -693,22 +710,23 @@ border-radius:20px;
      <widget class="QPushButton" name="startPomodoroButton">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>90</x>
         <y>80</y>
-        <width>131</width>
+        <width>161</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Start Pomodoro</string>
@@ -717,14 +735,15 @@ color:rgb(255, 255, 255);</string>
      <widget class="QComboBox" name="selectSubjectCombo">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>100</x>
         <y>50</y>
-        <width>231</width>
+        <width>211</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(168, 72, 88);
+</string>
       </property>
       <item>
        <property name="text">
@@ -756,7 +775,7 @@ color:rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(193, 81, 76, 125);
+      <string notr="true">background-color:#E96479;
 border-radius:30px;
 </string>
      </property>
@@ -764,7 +783,7 @@ border-radius:30px;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>33</y>
+        <y>40</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -788,7 +807,9 @@ border-radius:10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgb(168, 72, 88);
+border-radius:0px;
+</string>
       </property>
       <item>
        <property name="text">
@@ -818,16 +839,17 @@ border-radius:10px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
-       <string>Add New Subject</string>
+       <string>Add Subject</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="errorTextSubjectLabel">
@@ -849,7 +871,10 @@ color:rgb(255, 255, 255);</string>
 color:black;</string>
       </property>
       <property name="text">
-       <string>error text</string>
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -865,7 +890,7 @@ color:black;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(77, 69, 93);</string>
    </property>
    <widget class="QWidget" name="trackingHistoryWidget" native="true">
     <property name="enabled">
@@ -880,10 +905,10 @@ color:black;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(125, 193, 83);
+     <string notr="true">
 color:rgb(255,255,255);
 
-border-radius:60px;</string>
+border-radius:10px;</string>
     </property>
     <widget class="QWidget" name="showSummaryWidget" native="true">
      <property name="enabled">
@@ -898,8 +923,8 @@ border-radius:60px;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(88, 128, 63, 128);
-border-radius:40px;
+      <string notr="true">background-color:#7DB9B6;
+border-radius:10px;
 </string>
      </property>
      <widget class="QComboBox" name="showSummaryProjectCombo">
@@ -1083,16 +1108,17 @@ border-radius:40px;
      <widget class="QLabel" name="trackingHistoryTitleText">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>20</y>
-        <width>131</width>
+        <width>151</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
         <underline>false</underline>
        </font>
       </property>
@@ -1100,9 +1126,9 @@ border-radius:40px;
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);
+       <string notr="true">
 border-radius:10px;
-color:rgb(0,0,0);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Tracking History</string>
@@ -1123,13 +1149,14 @@ color:rgb(0,0,0);</string>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>9</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
+       <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
       </property>
       <property name="text">
        <string>Show Summary</string>
@@ -1167,15 +1194,26 @@ border-radius:0px;
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>13</pointsize>
+        <pointsize>11</pointsize>
         <italic>false</italic>
         <bold>false</bold>
        </font>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgba(88, 128, 63, 128);
-font: 13pt &quot;Chalkboard&quot;;
-text-align: center;</string>
+       <string notr="true">
+QHeaderView::section{Background-color:rgb(115, 171, 168); 
+	font: 700 9pt &quot;Segoe UI&quot;;
+                                   border-radius:14px;};
+background-color: #7DB9B6;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
       </property>
       <property name="sizeAdjustPolicy">
        <enum>QAbstractScrollArea::AdjustIgnored</enum>
@@ -1340,6 +1378,9 @@ text-align: center;</string>
        <property name="text">
         <string>Extracting values</string>
        </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </item>
       <item row="1" column="0">
        <property name="text">
@@ -1374,30 +1415,32 @@ text-align: center;</string>
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>180</x>
        <y>10</y>
-       <width>251</width>
+       <width>351</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(88, 128, 63, 128);
-border-radius:20px;
-</string>
+      <string notr="true">background-color:#7DB9B6;
+border-radius:10px;
+color:#4D455D;
+font-color:#color:#4D455D;</string>
      </property>
      <widget class="QLabel" name="totalTrackedTimeTextLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>141</width>
-        <height>18</height>
+        <width>211</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Chalkboard</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
         <underline>false</underline>
        </font>
       </property>
@@ -1417,9 +1460,9 @@ border-radius:20px;
      <widget class="QLabel" name="totalTrackedTimeDurationLabel">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>220</x>
         <y>10</y>
-        <width>71</width>
+        <width>121</width>
         <height>20</height>
        </rect>
       </property>
@@ -1447,25 +1490,26 @@ border-radius:20px;
     <widget class="QPushButton" name="sendEmailThisSummaryButton">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>540</x>
        <y>20</y>
-       <width>201</width>
-       <height>21</height>
+       <width>191</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Chalkboard</family>
        <pointsize>10</pointsize>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgb(0, 0, 0);
+      <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
      </property>
      <property name="text">
-      <string>Send Email This Summary</string>
+      <string>Send This Summary</string>
      </property>
     </widget>
    </widget>

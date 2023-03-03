@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 251, 250);
+    <string notr="true">background-color: #4D455D;
 border-right-color: rgb(27, 0, 21);
 </string>
    </property>
@@ -55,14 +55,16 @@ border-right-color: rgb(27, 0, 21);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-radius:50px;
-background-color: rgb(255, 66, 58);</string>
+      <string notr="true">border-radius:50px;</string>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>images/mainPage.png</pixmap>
+      <pixmap>images/pomodoro.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -78,25 +80,32 @@ background-color: rgb(255, 66, 58);</string>
       <height>121</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(126, 221, 194);
-color:rgb(0,0,0);
-border-radius:60px;
+     <string notr="true">
+color:#F5E9CF;
+
 </string>
     </property>
     <widget class="QLabel" name="timeTrackingText">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>-10</x>
        <y>20</y>
-       <width>211</width>
+       <width>381</width>
        <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Chalkboard</family>
-       <pointsize>20</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>28</pointsize>
+       <bold>true</bold>
        <underline>false</underline>
       </font>
      </property>
@@ -110,27 +119,32 @@ border-radius:60px;
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="appText">
+    <widget class="QLabel" name="timeTrackingText_2">
      <property name="geometry">
       <rect>
-       <x>120</x>
+       <x>-10</x>
        <y>70</y>
-       <width>101</width>
-       <height>31</height>
+       <width>381</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Chalkboard</family>
-       <pointsize>14</pointsize>
+       <family>Times New Roman</family>
+       <pointsize>28</pointsize>
+       <bold>true</bold>
        <underline>false</underline>
       </font>
      </property>
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color:#F5E9CF;
+</string>
+     </property>
      <property name="text">
-      <string>App</string>
+      <string>Pomodoro</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -148,7 +162,7 @@ border-radius:60px;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(252, 222, 164);</string>
+    <string notr="true">background-color:#4D455D;</string>
    </property>
    <widget class="QWidget" name="signUpWidget" native="true">
     <property name="enabled">
@@ -163,9 +177,9 @@ border-radius:60px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(125, 193, 83);
+     <string notr="true">background-color:#7DB9B6;
 color:rgb(255,255,255);
-border-radius:60px;
+border-radius:10px;
 </string>
     </property>
     <widget class="QPushButton" name="signUpButton">
@@ -184,9 +198,9 @@ border-radius:60px;
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgb(0, 0, 0);
+      <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
      </property>
      <property name="text">
       <string>Sign Up</string>
@@ -215,7 +229,7 @@ border-radius:10px;
       <rect>
        <x>50</x>
        <y>140</y>
-       <width>51</width>
+       <width>101</width>
        <height>21</height>
       </rect>
      </property>
@@ -230,7 +244,7 @@ border-radius:10px;
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
-      <string>Email</string>
+      <string>Email:</string>
      </property>
     </widget>
     <widget class="QLabel" name="signUpTextLAbel">
@@ -273,7 +287,10 @@ border-radius:10px;
 color:red;</string>
      </property>
      <property name="text">
-      <string>error text</string>
+      <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="nameTextLabel">
@@ -281,7 +298,7 @@ color:red;</string>
       <rect>
        <x>50</x>
        <y>70</y>
-       <width>51</width>
+       <width>91</width>
        <height>21</height>
       </rect>
      </property>
@@ -296,7 +313,7 @@ color:red;</string>
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
-      <string>Name</string>
+      <string>Name:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="nameInputSignUp">
@@ -331,9 +348,9 @@ border-radius:10px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(255, 96, 86);
+     <string notr="true">background-color:#E96479;
 color:rgb(255,255,255);
-border-radius:60px;
+border-radius:10px;
 </string>
     </property>
     <widget class="QPushButton" name="loginButton">
@@ -352,9 +369,9 @@ border-radius:60px;
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgb(0, 0, 0);
+      <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
      </property>
      <property name="text">
       <string>Login</string>
@@ -383,7 +400,7 @@ border-radius:10px;
       <rect>
        <x>50</x>
        <y>110</y>
-       <width>51</width>
+       <width>71</width>
        <height>21</height>
       </rect>
      </property>
@@ -398,7 +415,7 @@ border-radius:10px;
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
-      <string>Email</string>
+      <string>Email:</string>
      </property>
     </widget>
     <widget class="QLabel" name="loginText">
@@ -441,7 +458,10 @@ border-radius:10px;
 color:black;</string>
      </property>
      <property name="text">
-      <string>error text</string>
+      <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>

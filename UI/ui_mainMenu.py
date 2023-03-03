@@ -18,12 +18,12 @@ class Ui_mainMenuWidget(object):
         mainMenuWidget.setStyleSheet("background-color: rgb(252, 222, 164);")
         self.UpsideWidget = QtWidgets.QWidget(mainMenuWidget)
         self.UpsideWidget.setGeometry(QtCore.QRect(-1, -1, 801, 301))
-        self.UpsideWidget.setStyleSheet("")
+        self.UpsideWidget.setStyleSheet("background-color: rgb(77, 69, 93);")
         self.UpsideWidget.setObjectName("UpsideWidget")
         self.userWorkspaceWidget = QtWidgets.QWidget(self.UpsideWidget)
         self.userWorkspaceWidget.setEnabled(True)
         self.userWorkspaceWidget.setGeometry(QtCore.QRect(13, 10, 391, 280))
-        self.userWorkspaceWidget.setStyleSheet("background-color:rgb(126, 221, 194);\n"
+        self.userWorkspaceWidget.setStyleSheet("border-color: rgb(245, 233, 207);\n"
 "color:rgb(255,255,255);\n"
 "\n"
 "border-radius:60px;\n"
@@ -37,28 +37,29 @@ class Ui_mainMenuWidget(object):
         font.setUnderline(False)
         self.titleWorkspaceLabel.setFont(font)
         self.titleWorkspaceLabel.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.titleWorkspaceLabel.setStyleSheet("color:rgb(0,0,0);")
+        self.titleWorkspaceLabel.setStyleSheet("color:#F5E9CF;")
         self.titleWorkspaceLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.titleWorkspaceLabel.setObjectName("titleWorkspaceLabel")
         self.projectDeleteWidget = QtWidgets.QWidget(self.userWorkspaceWidget)
         self.projectDeleteWidget.setEnabled(True)
         self.projectDeleteWidget.setGeometry(QtCore.QRect(20, 170, 351, 41))
-        self.projectDeleteWidget.setStyleSheet("background-color:rgba(87, 128, 115, 128);\n"
-"border-radius:20px;\n"
+        self.projectDeleteWidget.setStyleSheet("background-color:#E96479;\n"
+"border-radius:10px;\n"
 "")
         self.projectDeleteWidget.setObjectName("projectDeleteWidget")
         self.projectDeleteButton = QtWidgets.QPushButton(self.projectDeleteWidget)
         self.projectDeleteButton.setGeometry(QtCore.QRect(280, 10, 51, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(10)
+        font.setPointSize(8)
+        font.setBold(True)
         self.projectDeleteButton.setFont(font)
-        self.projectDeleteButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.projectDeleteButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.projectDeleteButton.setObjectName("projectDeleteButton")
         self.projectDeleteLabel = QtWidgets.QLabel(self.projectDeleteWidget)
-        self.projectDeleteLabel.setGeometry(QtCore.QRect(20, 10, 51, 18))
+        self.projectDeleteLabel.setGeometry(QtCore.QRect(20, 10, 71, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(12)
@@ -70,7 +71,9 @@ class Ui_mainMenuWidget(object):
         self.projectDeleteLabel.setObjectName("projectDeleteLabel")
         self.projectDeleteCombo = QtWidgets.QComboBox(self.projectDeleteWidget)
         self.projectDeleteCombo.setGeometry(QtCore.QRect(90, 10, 181, 21))
-        self.projectDeleteCombo.setStyleSheet("")
+        self.projectDeleteCombo.setStyleSheet("background-color: rgb(168, 72, 88);\n"
+"border-radius:0px;\n"
+"")
         self.projectDeleteCombo.setObjectName("projectDeleteCombo")
         self.projectDeleteCombo.addItem("")
         self.projectDeleteCombo.addItem("")
@@ -78,22 +81,23 @@ class Ui_mainMenuWidget(object):
         self.subjectDeleteWidget = QtWidgets.QWidget(self.userWorkspaceWidget)
         self.subjectDeleteWidget.setEnabled(True)
         self.subjectDeleteWidget.setGeometry(QtCore.QRect(20, 220, 351, 41))
-        self.subjectDeleteWidget.setStyleSheet("background-color:rgba(87, 128, 115, 128);\n"
-"border-radius:20px;\n"
+        self.subjectDeleteWidget.setStyleSheet("background-color:#E96479;\n"
+"border-radius:10px;\n"
 "")
         self.subjectDeleteWidget.setObjectName("subjectDeleteWidget")
         self.subjectDeleteButton = QtWidgets.QPushButton(self.subjectDeleteWidget)
         self.subjectDeleteButton.setGeometry(QtCore.QRect(280, 10, 51, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(10)
+        font.setPointSize(8)
+        font.setBold(True)
         self.subjectDeleteButton.setFont(font)
-        self.subjectDeleteButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.subjectDeleteButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.subjectDeleteButton.setObjectName("subjectDeleteButton")
         self.subjectDeleteLabel = QtWidgets.QLabel(self.subjectDeleteWidget)
-        self.subjectDeleteLabel.setGeometry(QtCore.QRect(20, 10, 51, 18))
+        self.subjectDeleteLabel.setGeometry(QtCore.QRect(20, 10, 71, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(12)
@@ -105,7 +109,9 @@ class Ui_mainMenuWidget(object):
         self.subjectDeleteLabel.setObjectName("subjectDeleteLabel")
         self.subjectDeleteCombo = QtWidgets.QComboBox(self.subjectDeleteWidget)
         self.subjectDeleteCombo.setGeometry(QtCore.QRect(90, 10, 181, 21))
-        self.subjectDeleteCombo.setStyleSheet("")
+        self.subjectDeleteCombo.setStyleSheet("background-color: rgb(168, 72, 88);\n"
+"border-radius:0px;\n"
+"")
         self.subjectDeleteCombo.setObjectName("subjectDeleteCombo")
         self.subjectDeleteCombo.addItem("")
         self.subjectDeleteCombo.addItem("")
@@ -113,19 +119,20 @@ class Ui_mainMenuWidget(object):
         self.recipientsWidget = QtWidgets.QWidget(self.userWorkspaceWidget)
         self.recipientsWidget.setEnabled(True)
         self.recipientsWidget.setGeometry(QtCore.QRect(20, 50, 351, 111))
-        self.recipientsWidget.setStyleSheet("background-color:rgba(87, 128, 115, 128);\n"
-"border-radius:30px;\n"
+        self.recipientsWidget.setStyleSheet("background-color:#E96479;\n"
+"border-radius:10px;\n"
 "")
         self.recipientsWidget.setObjectName("recipientsWidget")
         self.deleteRecipientButton = QtWidgets.QPushButton(self.recipientsWidget)
         self.deleteRecipientButton.setGeometry(QtCore.QRect(280, 80, 51, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(10)
+        font.setPointSize(8)
+        font.setBold(True)
         self.deleteRecipientButton.setFont(font)
-        self.deleteRecipientButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.deleteRecipientButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.deleteRecipientButton.setObjectName("deleteRecipientButton")
         self.recipientTitleLabel = QtWidgets.QLabel(self.recipientsWidget)
         self.recipientTitleLabel.setGeometry(QtCore.QRect(20, 10, 251, 18))
@@ -140,7 +147,9 @@ class Ui_mainMenuWidget(object):
         self.recipientTitleLabel.setObjectName("recipientTitleLabel")
         self.deleteRecipientCombo = QtWidgets.QComboBox(self.recipientsWidget)
         self.deleteRecipientCombo.setGeometry(QtCore.QRect(10, 80, 261, 21))
-        self.deleteRecipientCombo.setStyleSheet("")
+        self.deleteRecipientCombo.setStyleSheet("background-color: rgb(168, 72, 88);\n"
+"border-radius:0px;\n"
+"")
         self.deleteRecipientCombo.setObjectName("deleteRecipientCombo")
         self.deleteRecipientCombo.addItem("")
         self.deleteRecipientCombo.addItem("")
@@ -156,11 +165,12 @@ class Ui_mainMenuWidget(object):
         self.addRecipientButton.setGeometry(QtCore.QRect(280, 40, 51, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(10)
+        font.setPointSize(8)
+        font.setBold(True)
         self.addRecipientButton.setFont(font)
-        self.addRecipientButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.addRecipientButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.addRecipientButton.setObjectName("addRecipientButton")
         self.errorTextRecipientsEmailLabel = QtWidgets.QLineEdit(self.recipientsWidget)
         self.errorTextRecipientsEmailLabel.setGeometry(QtCore.QRect(10, 60, 271, 21))
@@ -169,31 +179,33 @@ class Ui_mainMenuWidget(object):
         self.errorTextRecipientsEmailLabel.setFont(font)
         self.errorTextRecipientsEmailLabel.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
 "color:red;")
+        self.errorTextRecipientsEmailLabel.setText("")
+        self.errorTextRecipientsEmailLabel.setReadOnly(True)
         self.errorTextRecipientsEmailLabel.setObjectName("errorTextRecipientsEmailLabel")
         self.startTimeTrackingWidget = QtWidgets.QWidget(self.UpsideWidget)
         self.startTimeTrackingWidget.setEnabled(True)
         self.startTimeTrackingWidget.setGeometry(QtCore.QRect(420, 10, 371, 281))
-        self.startTimeTrackingWidget.setStyleSheet("background-color:rgb(255, 96, 86);\n"
+        self.startTimeTrackingWidget.setStyleSheet("\n"
 "color:rgb(255,255,255);\n"
 "\n"
-"border-radius:60px;")
+"border-radius:10px;")
         self.startTimeTrackingWidget.setObjectName("startTimeTrackingWidget")
         self.startTimeTrackingLabel = QtWidgets.QLabel(self.startTimeTrackingWidget)
-        self.startTimeTrackingLabel.setGeometry(QtCore.QRect(90, 10, 210, 31))
+        self.startTimeTrackingLabel.setGeometry(QtCore.QRect(40, 0, 301, 31))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(16)
         font.setUnderline(False)
         self.startTimeTrackingLabel.setFont(font)
         self.startTimeTrackingLabel.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.startTimeTrackingLabel.setStyleSheet("color:rgb(0,0,0);")
+        self.startTimeTrackingLabel.setStyleSheet("color:#F5E9CF;")
         self.startTimeTrackingLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.startTimeTrackingLabel.setObjectName("startTimeTrackingLabel")
         self.addProjectWidget = QtWidgets.QWidget(self.startTimeTrackingWidget)
         self.addProjectWidget.setEnabled(True)
         self.addProjectWidget.setGeometry(QtCore.QRect(20, 40, 161, 111))
-        self.addProjectWidget.setStyleSheet("background-color:rgba(193, 81, 76, 125);\n"
-"border-radius:30px;\n"
+        self.addProjectWidget.setStyleSheet("background-color:#E96479;\n"
+"border-radius:10px;\n"
 "")
         self.addProjectWidget.setObjectName("addProjectWidget")
         self.addProjectLabel = QtWidgets.QLabel(self.addProjectWidget)
@@ -209,7 +221,7 @@ class Ui_mainMenuWidget(object):
         self.addProjectLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.addProjectLabel.setObjectName("addProjectLabel")
         self.addProjectInput = QtWidgets.QLineEdit(self.addProjectWidget)
-        self.addProjectInput.setGeometry(QtCore.QRect(10, 30, 141, 21))
+        self.addProjectInput.setGeometry(QtCore.QRect(10, 40, 141, 21))
         self.addProjectInput.setStyleSheet("background-color: rgba(217, 217, 217, 66);\n"
 "border-radius:10px;\n"
 "")
@@ -219,11 +231,12 @@ class Ui_mainMenuWidget(object):
         self.addProjectButton.setGeometry(QtCore.QRect(20, 80, 121, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(10)
+        font.setPointSize(8)
+        font.setBold(True)
         self.addProjectButton.setFont(font)
-        self.addProjectButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.addProjectButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.addProjectButton.setObjectName("addProjectButton")
         self.errorTextProjectLabel = QtWidgets.QLineEdit(self.addProjectWidget)
         self.errorTextProjectLabel.setGeometry(QtCore.QRect(10, 60, 141, 20))
@@ -232,16 +245,18 @@ class Ui_mainMenuWidget(object):
         self.errorTextProjectLabel.setFont(font)
         self.errorTextProjectLabel.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
 "color:black;")
+        self.errorTextProjectLabel.setText("")
+        self.errorTextProjectLabel.setReadOnly(True)
         self.errorTextProjectLabel.setObjectName("errorTextProjectLabel")
         self.selectProjectSubjectWidget = QtWidgets.QWidget(self.startTimeTrackingWidget)
         self.selectProjectSubjectWidget.setEnabled(True)
         self.selectProjectSubjectWidget.setGeometry(QtCore.QRect(20, 160, 331, 111))
-        self.selectProjectSubjectWidget.setStyleSheet("background-color:rgba(193, 81, 76, 125);\n"
+        self.selectProjectSubjectWidget.setStyleSheet("background-color:#E96479;\n"
 "border-radius:20px;\n"
 "")
         self.selectProjectSubjectWidget.setObjectName("selectProjectSubjectWidget")
         self.selectProjectLabel = QtWidgets.QLabel(self.selectProjectSubjectWidget)
-        self.selectProjectLabel.setGeometry(QtCore.QRect(20, 10, 51, 18))
+        self.selectProjectLabel.setGeometry(QtCore.QRect(20, 10, 71, 18))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(12)
@@ -252,14 +267,14 @@ class Ui_mainMenuWidget(object):
         self.selectProjectLabel.setStyleSheet("background-color:rgba(255, 255, 255, 0);")
         self.selectProjectLabel.setObjectName("selectProjectLabel")
         self.selectProjectCombo = QtWidgets.QComboBox(self.selectProjectSubjectWidget)
-        self.selectProjectCombo.setGeometry(QtCore.QRect(80, 10, 231, 21))
-        self.selectProjectCombo.setStyleSheet("")
+        self.selectProjectCombo.setGeometry(QtCore.QRect(100, 10, 211, 21))
+        self.selectProjectCombo.setStyleSheet("background-color: rgb(168, 72, 88);")
         self.selectProjectCombo.setObjectName("selectProjectCombo")
         self.selectProjectCombo.addItem("")
         self.selectProjectCombo.addItem("")
         self.selectProjectCombo.addItem("")
         self.selectSubjectLabel = QtWidgets.QLabel(self.selectProjectSubjectWidget)
-        self.selectSubjectLabel.setGeometry(QtCore.QRect(20, 50, 51, 18))
+        self.selectSubjectLabel.setGeometry(QtCore.QRect(20, 50, 71, 18))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(12)
@@ -270,18 +285,20 @@ class Ui_mainMenuWidget(object):
         self.selectSubjectLabel.setStyleSheet("background-color:rgba(255, 255, 255, 0);")
         self.selectSubjectLabel.setObjectName("selectSubjectLabel")
         self.startPomodoroButton = QtWidgets.QPushButton(self.selectProjectSubjectWidget)
-        self.startPomodoroButton.setGeometry(QtCore.QRect(110, 80, 131, 21))
+        self.startPomodoroButton.setGeometry(QtCore.QRect(90, 80, 161, 21))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(12)
+        font.setPointSize(11)
+        font.setBold(False)
         self.startPomodoroButton.setFont(font)
-        self.startPomodoroButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.startPomodoroButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.startPomodoroButton.setObjectName("startPomodoroButton")
         self.selectSubjectCombo = QtWidgets.QComboBox(self.selectProjectSubjectWidget)
-        self.selectSubjectCombo.setGeometry(QtCore.QRect(80, 50, 231, 21))
-        self.selectSubjectCombo.setStyleSheet("")
+        self.selectSubjectCombo.setGeometry(QtCore.QRect(100, 50, 211, 21))
+        self.selectSubjectCombo.setStyleSheet("background-color: rgb(168, 72, 88);\n"
+"")
         self.selectSubjectCombo.setObjectName("selectSubjectCombo")
         self.selectSubjectCombo.addItem("")
         self.selectSubjectCombo.addItem("")
@@ -289,12 +306,12 @@ class Ui_mainMenuWidget(object):
         self.addSubjectWidget = QtWidgets.QWidget(self.startTimeTrackingWidget)
         self.addSubjectWidget.setEnabled(True)
         self.addSubjectWidget.setGeometry(QtCore.QRect(190, 40, 161, 111))
-        self.addSubjectWidget.setStyleSheet("background-color:rgba(193, 81, 76, 125);\n"
+        self.addSubjectWidget.setStyleSheet("background-color:#E96479;\n"
 "border-radius:30px;\n"
 "")
         self.addSubjectWidget.setObjectName("addSubjectWidget")
         self.addSubjectInput = QtWidgets.QLineEdit(self.addSubjectWidget)
-        self.addSubjectInput.setGeometry(QtCore.QRect(10, 33, 141, 21))
+        self.addSubjectInput.setGeometry(QtCore.QRect(10, 40, 141, 21))
         self.addSubjectInput.setStyleSheet("background-color: rgba(217, 217, 217, 66);\n"
 "border-radius:10px;\n"
 "")
@@ -302,7 +319,9 @@ class Ui_mainMenuWidget(object):
         self.addSubjectInput.setObjectName("addSubjectInput")
         self.addSubjectOnProjectCombo = QtWidgets.QComboBox(self.addSubjectWidget)
         self.addSubjectOnProjectCombo.setGeometry(QtCore.QRect(20, 8, 121, 21))
-        self.addSubjectOnProjectCombo.setStyleSheet("")
+        self.addSubjectOnProjectCombo.setStyleSheet("background-color: rgb(168, 72, 88);\n"
+"border-radius:0px;\n"
+"")
         self.addSubjectOnProjectCombo.setObjectName("addSubjectOnProjectCombo")
         self.addSubjectOnProjectCombo.addItem("")
         self.addSubjectOnProjectCombo.addItem("")
@@ -311,11 +330,12 @@ class Ui_mainMenuWidget(object):
         self.addSubjectButton.setGeometry(QtCore.QRect(20, 80, 121, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(10)
+        font.setPointSize(8)
+        font.setBold(True)
         self.addSubjectButton.setFont(font)
-        self.addSubjectButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.addSubjectButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.addSubjectButton.setObjectName("addSubjectButton")
         self.errorTextSubjectLabel = QtWidgets.QLineEdit(self.addSubjectWidget)
         self.errorTextSubjectLabel.setGeometry(QtCore.QRect(10, 60, 141, 20))
@@ -324,24 +344,26 @@ class Ui_mainMenuWidget(object):
         self.errorTextSubjectLabel.setFont(font)
         self.errorTextSubjectLabel.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
 "color:black;")
+        self.errorTextSubjectLabel.setText("")
+        self.errorTextSubjectLabel.setReadOnly(True)
         self.errorTextSubjectLabel.setObjectName("errorTextSubjectLabel")
         self.downsideWidget = QtWidgets.QWidget(mainMenuWidget)
         self.downsideWidget.setGeometry(QtCore.QRect(0, 300, 801, 311))
-        self.downsideWidget.setStyleSheet("")
+        self.downsideWidget.setStyleSheet("background-color: rgb(77, 69, 93);")
         self.downsideWidget.setObjectName("downsideWidget")
         self.trackingHistoryWidget = QtWidgets.QWidget(self.downsideWidget)
         self.trackingHistoryWidget.setEnabled(True)
         self.trackingHistoryWidget.setGeometry(QtCore.QRect(15, 0, 771, 291))
-        self.trackingHistoryWidget.setStyleSheet("background-color:rgb(125, 193, 83);\n"
+        self.trackingHistoryWidget.setStyleSheet("\n"
 "color:rgb(255,255,255);\n"
 "\n"
-"border-radius:60px;")
+"border-radius:10px;")
         self.trackingHistoryWidget.setObjectName("trackingHistoryWidget")
         self.showSummaryWidget = QtWidgets.QWidget(self.trackingHistoryWidget)
         self.showSummaryWidget.setEnabled(True)
         self.showSummaryWidget.setGeometry(QtCore.QRect(20, 10, 151, 271))
-        self.showSummaryWidget.setStyleSheet("background-color:rgba(88, 128, 63, 128);\n"
-"border-radius:40px;\n"
+        self.showSummaryWidget.setStyleSheet("background-color:#7DB9B6;\n"
+"border-radius:10px;\n"
 "")
         self.showSummaryWidget.setObjectName("showSummaryWidget")
         self.showSummaryProjectCombo = QtWidgets.QComboBox(self.showSummaryWidget)
@@ -400,27 +422,29 @@ class Ui_mainMenuWidget(object):
         self.showSummaryPeriodCombo.addItem("")
         self.showSummaryPeriodCombo.addItem("")
         self.trackingHistoryTitleText = QtWidgets.QLabel(self.showSummaryWidget)
-        self.trackingHistoryTitleText.setGeometry(QtCore.QRect(10, 20, 131, 31))
+        self.trackingHistoryTitleText.setGeometry(QtCore.QRect(0, 20, 151, 31))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(12)
+        font.setPointSize(10)
+        font.setBold(True)
         font.setUnderline(False)
         self.trackingHistoryTitleText.setFont(font)
         self.trackingHistoryTitleText.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.trackingHistoryTitleText.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+        self.trackingHistoryTitleText.setStyleSheet("\n"
 "border-radius:10px;\n"
-"color:rgb(0,0,0);")
+"color:#4D455D;")
         self.trackingHistoryTitleText.setAlignment(QtCore.Qt.AlignCenter)
         self.trackingHistoryTitleText.setObjectName("trackingHistoryTitleText")
         self.showSummaryButton = QtWidgets.QPushButton(self.showSummaryWidget)
         self.showSummaryButton.setGeometry(QtCore.QRect(10, 210, 131, 41))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(12)
+        font.setPointSize(9)
+        font.setBold(True)
         self.showSummaryButton.setFont(font)
-        self.showSummaryButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.showSummaryButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.showSummaryButton.setObjectName("showSummaryButton")
         self.summaryTablePart = QtWidgets.QWidget(self.trackingHistoryWidget)
         self.summaryTablePart.setEnabled(True)
@@ -435,13 +459,18 @@ class Ui_mainMenuWidget(object):
         self.summaryTableValuesWidget.setGeometry(QtCore.QRect(0, 0, 561, 211))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(13)
+        font.setPointSize(11)
         font.setBold(False)
         font.setItalic(False)
         self.summaryTableValuesWidget.setFont(font)
-        self.summaryTableValuesWidget.setStyleSheet("background-color:rgba(88, 128, 63, 128);\n"
-"font: 13pt \"Chalkboard\";\n"
-"text-align: center;")
+        self.summaryTableValuesWidget.setAutoFillBackground(False)
+        self.summaryTableValuesWidget.setStyleSheet("\n"
+"QHeaderView::section{Background-color:rgb(115, 171, 168); \n"
+"    font: 700 9pt \"Segoe UI\";\n"
+"                                   border-radius:14px;};\n"
+"background-color: #7DB9B6;")
+        self.summaryTableValuesWidget.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.summaryTableValuesWidget.setLineWidth(1)
         self.summaryTableValuesWidget.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
         self.summaryTableValuesWidget.setAutoScrollMargin(14)
         self.summaryTableValuesWidget.setAlternatingRowColors(False)
@@ -495,6 +524,7 @@ class Ui_mainMenuWidget(object):
         item = QtWidgets.QTableWidgetItem()
         self.summaryTableValuesWidget.setItem(0, 3, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.summaryTableValuesWidget.setItem(0, 4, item)
         item = QtWidgets.QTableWidgetItem()
         self.summaryTableValuesWidget.setItem(1, 0, item)
@@ -513,16 +543,18 @@ class Ui_mainMenuWidget(object):
         self.summaryTableValuesWidget.verticalHeader().setMinimumSectionSize(25)
         self.totalTrackedTimeWidget = QtWidgets.QWidget(self.trackingHistoryWidget)
         self.totalTrackedTimeWidget.setEnabled(True)
-        self.totalTrackedTimeWidget.setGeometry(QtCore.QRect(210, 10, 251, 41))
-        self.totalTrackedTimeWidget.setStyleSheet("background-color:rgba(88, 128, 63, 128);\n"
-"border-radius:20px;\n"
-"")
+        self.totalTrackedTimeWidget.setGeometry(QtCore.QRect(180, 10, 351, 41))
+        self.totalTrackedTimeWidget.setStyleSheet("background-color:#7DB9B6;\n"
+"border-radius:10px;\n"
+"color:#4D455D;\n"
+"font-color:#color:#4D455D;")
         self.totalTrackedTimeWidget.setObjectName("totalTrackedTimeWidget")
         self.totalTrackedTimeTextLabel = QtWidgets.QLabel(self.totalTrackedTimeWidget)
-        self.totalTrackedTimeTextLabel.setGeometry(QtCore.QRect(10, 10, 141, 18))
+        self.totalTrackedTimeTextLabel.setGeometry(QtCore.QRect(10, 10, 211, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
-        font.setPointSize(12)
+        font.setPointSize(10)
+        font.setBold(True)
         font.setUnderline(False)
         self.totalTrackedTimeTextLabel.setFont(font)
         self.totalTrackedTimeTextLabel.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -530,7 +562,7 @@ class Ui_mainMenuWidget(object):
         self.totalTrackedTimeTextLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.totalTrackedTimeTextLabel.setObjectName("totalTrackedTimeTextLabel")
         self.totalTrackedTimeDurationLabel = QtWidgets.QLabel(self.totalTrackedTimeWidget)
-        self.totalTrackedTimeDurationLabel.setGeometry(QtCore.QRect(160, 10, 71, 20))
+        self.totalTrackedTimeDurationLabel.setGeometry(QtCore.QRect(220, 10, 121, 20))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(14)
@@ -541,14 +573,15 @@ class Ui_mainMenuWidget(object):
         self.totalTrackedTimeDurationLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.totalTrackedTimeDurationLabel.setObjectName("totalTrackedTimeDurationLabel")
         self.sendEmailThisSummaryButton = QtWidgets.QPushButton(self.trackingHistoryWidget)
-        self.sendEmailThisSummaryButton.setGeometry(QtCore.QRect(470, 20, 201, 21))
+        self.sendEmailThisSummaryButton.setGeometry(QtCore.QRect(540, 20, 191, 31))
         font = QtGui.QFont()
         font.setFamily("Chalkboard")
         font.setPointSize(10)
+        font.setBold(True)
         self.sendEmailThisSummaryButton.setFont(font)
-        self.sendEmailThisSummaryButton.setStyleSheet("background-color:rgb(0, 0, 0);\n"
+        self.sendEmailThisSummaryButton.setStyleSheet("background-color:#F5E9CF;\n"
 "border-radius:10px;\n"
-"color:rgb(255, 255, 255);")
+"color:#4D455D;")
         self.sendEmailThisSummaryButton.setObjectName("sendEmailThisSummaryButton")
 
         self.retranslateUi(mainMenuWidget)
@@ -574,11 +607,9 @@ class Ui_mainMenuWidget(object):
         self.deleteRecipientCombo.setItemText(1, _translate("mainMenuWidget", "bahadir_parent@mail.com"))
         self.deleteRecipientCombo.setItemText(2, _translate("mainMenuWidget", "bahadir_boss@mail.com"))
         self.addRecipientButton.setText(_translate("mainMenuWidget", "Add"))
-        self.errorTextRecipientsEmailLabel.setText(_translate("mainMenuWidget", "error text"))
         self.startTimeTrackingLabel.setText(_translate("mainMenuWidget", "Start Time Tracking"))
         self.addProjectLabel.setText(_translate("mainMenuWidget", "Project"))
-        self.addProjectButton.setText(_translate("mainMenuWidget", "Add New Project"))
-        self.errorTextProjectLabel.setText(_translate("mainMenuWidget", "error text"))
+        self.addProjectButton.setText(_translate("mainMenuWidget", "Add Project"))
         self.selectProjectLabel.setText(_translate("mainMenuWidget", "Project"))
         self.selectProjectCombo.setItemText(0, _translate("mainMenuWidget", "project01"))
         self.selectProjectCombo.setItemText(1, _translate("mainMenuWidget", "project02"))
@@ -591,8 +622,7 @@ class Ui_mainMenuWidget(object):
         self.addSubjectOnProjectCombo.setItemText(0, _translate("mainMenuWidget", "project01"))
         self.addSubjectOnProjectCombo.setItemText(1, _translate("mainMenuWidget", "project02"))
         self.addSubjectOnProjectCombo.setItemText(2, _translate("mainMenuWidget", "project03"))
-        self.addSubjectButton.setText(_translate("mainMenuWidget", "Add New Subject"))
-        self.errorTextSubjectLabel.setText(_translate("mainMenuWidget", "error text"))
+        self.addSubjectButton.setText(_translate("mainMenuWidget", "Add Subject"))
         self.showSummaryProjectCombo.setItemText(0, _translate("mainMenuWidget", "All"))
         self.showSummaryProjectCombo.setItemText(1, _translate("mainMenuWidget", "project01"))
         self.showSummaryProjectCombo.setItemText(2, _translate("mainMenuWidget", "project02"))
@@ -647,4 +677,4 @@ class Ui_mainMenuWidget(object):
         self.summaryTableValuesWidget.setSortingEnabled(__sortingEnabled)
         self.totalTrackedTimeTextLabel.setText(_translate("mainMenuWidget", "Total Tracked Time:"))
         self.totalTrackedTimeDurationLabel.setText(_translate("mainMenuWidget", "36:30"))
-        self.sendEmailThisSummaryButton.setText(_translate("mainMenuWidget", "Send Email This Summary"))
+        self.sendEmailThisSummaryButton.setText(_translate("mainMenuWidget", "Send This Summary"))

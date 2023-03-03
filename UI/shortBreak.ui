@@ -26,15 +26,15 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(125, 193, 83);
+    <string notr="true">background-color:#4D455D;
 color:rgb(255,255,255);; </string>
    </property>
    <widget class="QLabel" name="timeLabel">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>90</y>
-      <width>311</width>
+      <x>220</x>
+      <y>140</y>
+      <width>391</width>
       <height>201</height>
      </rect>
     </property>
@@ -45,7 +45,7 @@ color:rgb(255,255,255);; </string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(195, 141, 179, 89);
+     <string notr="true">background-color:#E96479;
 border-radius:30px;</string>
     </property>
     <property name="text">
@@ -59,7 +59,7 @@ border-radius:30px;</string>
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>320</y>
+      <y>360</y>
       <width>161</width>
       <height>41</height>
      </rect>
@@ -71,9 +71,9 @@ border-radius:30px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(0, 0, 0);
+     <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
     </property>
     <property name="text">
      <string>Start</string>
@@ -95,9 +95,9 @@ color:rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(0, 0, 0);
+     <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
     </property>
     <property name="text">
      <string>Skip</string>
@@ -108,7 +108,7 @@ color:rgb(255, 255, 255);</string>
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>91</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
@@ -119,9 +119,9 @@ color:rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(0, 0, 0);
+     <string notr="true">background-color:#F5E9CF;
 border-radius:10px;
-color:rgb(255, 255, 255);</string>
+color:#4D455D;</string>
     </property>
     <property name="text">
      <string>Main Menu</string>
