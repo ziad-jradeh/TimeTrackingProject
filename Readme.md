@@ -1,23 +1,47 @@
 # Time Tracking Application
-* This Project gives the user an experience on managing their time and the tasks they want to accomplish. 
+
+## Description
+
+This project helps the user on managing their time and the tasks they want to accomplish. It gives the user an experience of interacting with UI to customize their subjects, projects, and tasks and give them a summary of their performance. The user can add recipients and send the summary of the Pomodoro sessions through email to recipients using their email addresses.
+
+## Requirements 
+
+ 1. Python 3.6 or higher
+ 2. pip package installer
+ 3. smtplib library for sending emails
+ 4. PyQt5 5.15.7
+
+ ## Installation
+
+* To run the application directly, install the .exe file from the repository and run the application.
+
+* To run the program from a python IDE:
+1.  Clone or download the repository to your local machine.
+2. Navigate to the project directory in your terminal/command prompt.
+    
+3. Install the required packages by running the 
+following command:
+
+        pip install -r requirements.txt
+
+4. Run the main.py file by typing the following command in your terminal:
+
+        python3 main.py
+## Usage
 
 
-## Login and sign up page
+
+###  Register and sign up page & main menu
 
 
 * The user can register into the application using their email and username.
 * Then the user can sign in to the application to enter to the main menu.
+* In the main menu, the user can custom and adjust the session based on their needs in terms of recipients, projects or subjects.
 
-![loginandsignup](UI/UIScreenshots/01-Login.png)
+![loginandsignup](UI/UIScreenshots/combine_images1.jpg)
 
 
-## Main Menu
-
-* In the main menu, the user can custom and adjust the session based on their needs in terms of recipients, projects or subjects. 
-
-![Mainmenu](UI/UIScreenshots/02-MainMenu.png)
-
-## Pomodoro Session
+### Pomodoro Session
 
 * The session starts once the user clicks on starts pomodoro in the main menu, and it will direct them to the pomodoro session.
 
@@ -25,50 +49,81 @@
 
 ![pomodoro](UI/UIScreenshots/03-Pomodoro.png)
 
-## Short break
+### Short break & Long break
 
 * After each session of pomodoro, the user can have a break for five minutes or they can skip the break if the user wants to. 
-
-
-![shortbreak](UI/UIScreenshots/04-ShortBreak.png)
-
-
-## Long break
-
 * After four sessions of pomodoro, the user can have a break for thirty minutes or they can skip the break also. 
 
-![Longbreak](UI/UIScreenshots/05-LongBreak.png)
+
+![shortbreak](UI/UIScreenshots/combine_images2.jpg)
 
 
 
-# UML and activity diagrams
+## UML and activity diagrams
 
-The UML class diagram for this application are shown below: 
 
-## class diagram
+### class diagram
+* The classes ued to complete this application are illustrated in the class diagram below.
+
 
 ![classdiagram](UML_diagrams/class_diagram.jpg)
 
 
-## Signup/Sign in logic
+### Signup/Sign in logic
 
 
-* Sing in and sign up activity diagram.
+* Sign in and sign up activity diagram.
 
 
-![classdiagram](UML_diagrams/Signup_login.jpg)
+![signin/sign diagram](UML_diagrams/Signup_login.jpg)
 
-## Tasks and Pomodoro sessions Logic
+### Tasks and Pomodoro sessions Logic
 
 * Tasks (To-do-list) and Pomodoro sessions activity diagram.
 
-![classdiagram](UML_diagrams/Task_and_pomodoro.jpg)
+![Pomodorodiagram](UML_diagrams/Task_and_pomodoro.jpg)
 
-##  Program Start/Quit Logic
+###  Program Start/Quit Logic
 
 * Start/Quit activity diagram.
 
-![classdiagram](UML_diagrams/Task_and_pomodoro.jpg)
+![start/quitdiagram](UML_diagrams/Start_quit.jpg)
+
+### Usecase diagram
+
+* This diagram shows how the user interacts with the application. 
+
+![usecasediagram](UML_diagrams/Usecase_diagram.jpg)
+
+## Collaborators/team members:
+
+Project given by: [Fenyx IT Academy](https://github.com/fenyx-it-academy)
+
+### Team members:
+
+[Abdullah Al-Zaghir](https://github.com/abdullahalzaghir)
+
+[Ziad Jerdah](https://github.com/ziad-jradeh)
+
+[Girmay](https://github.com/gmaknl21)
+
+[Kemal](https://github.com/Kemal919191)
+
+[Muhammad Ziad](https://github.com/MuhammadZiad)
+
+### Mentors:
+
+[Muhammed Bahadir Kucuk](https://github.com/kucukbahadirh)
+
+[Samet](https://github.com/s4mto)
+
+
+## License 
+
+This project is licensed under the MIT License.
+
+
+
 
 
 
