@@ -103,7 +103,7 @@ Project given by: [Fenyx IT Academy](https://github.com/fenyx-it-academy)
 
 [Abdullah Al-Zaghir](https://github.com/abdullahalzaghir)
 
-[Ziad Jerdah](https://github.com/ziad-jradeh)
+[Ziad Jradeh](https://github.com/ziad-jradeh)
 
 [Girmay](https://github.com/gmaknl21)
 
